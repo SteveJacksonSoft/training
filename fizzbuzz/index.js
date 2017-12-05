@@ -58,7 +58,7 @@ function rule17(num , readOut){
 console.log("How far do you want to go?");
 const topNum = readline.prompt();
 
-console.log("Which rules would you like to implement? Enter a subset of { 3, 5, 7, 11, 13, 17}. Leave a space on each side of the number.");
+console.log("Which rules would you like to implement? Enter a subset of { 3, 5, 7, 11, 13, 17} in brackets. Leave a space on each side of the number.");
 const options = readline.prompt();
 for( let i=0;i<6;i++){
     if ( options.indexOf(' ' + primes[i] + ' ') !== -1 ){
