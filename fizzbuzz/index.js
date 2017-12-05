@@ -8,6 +8,7 @@ let minJ,
     primes = ['3','5','7','11','13','17'];
 
 // Rules
+// For multiples of 3,5,7 read terms as and when and in that order
 function rule3(num , readOut){
     if ( num%3 === 0 )
         readOut += "Fizz";
@@ -23,11 +24,13 @@ function rule7(num , readOut){
         readOut += "Bang";
     return readOut
 }
+// For multiples of 11 read "Bong" only (unless also multiple of 13 in which case read Fezz also)
 function rule11(num , readOut){
     if ( num%11 === 0 )
         readOut = "Bong";
     return readOut
 }
+// For multiples of 13 read Fezz before first B word
 function rule13(num , readOut){
     if ( num%13 === 0 ) {
         bIndex = readOut.indexOf("B");
@@ -38,6 +41,7 @@ function rule13(num , readOut){
     }
     return readOut
 }
+// For multiples of 17 reverse order of words
 function rule17(num , readOut){
     if ( num%17 === 0 ){
         maxJ = readOut.length;
@@ -68,23 +72,16 @@ for( let i=0;i<6;i++){
 for (let i=1;i<=topNum;i++){
     readOut = "";
 
-    // For multiples of 3,5,7 read terms as and when and in that order
     if (rules[0])
         readOut = rule3(i,readOut);
     if (rules[1])
         readOut = rule5(i,readOut);
     if (rules[2])
         readOut = rule7(i,readOut);
-
-    // For multiples of 11 read "Bong" only (unless also multiple of 13 in which case read Fezz also)
     if (rules[3])
         readOut = rule11(i,readOut);
-
-    // For multiples of 13 read Fezz before first B word
     if (rules[4])
         readOut = rule13(i,readOut)
-
-    // For multiples of 17 reverse order of words
     if (rules[5])
         readOut = rule17(i,readOut)
 
