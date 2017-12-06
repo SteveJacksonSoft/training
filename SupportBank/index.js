@@ -2,6 +2,10 @@ const readline = require('readline-sync');
 const fs = require('fs');
 const log4js = require('log4js');
 const logger = log4js.getLogger('index.js');
+const xml2js = require('xml2js');
+
+
+// Logger configuration
 log4js.configure({
     appenders: {
         file: { type: 'fileSync', filename: 'logs/debug.log' }
@@ -174,13 +178,36 @@ function addNewJSONTrans(fileName) {
     return transList
 }
 
+function addNewXMLTrans(fileName) {
+    // Returns list of transactions from an XML file
 
+    const newFile = fs.readFileSync(fileName, 'utf8');
+    let newData;
+    xml2js.parseString(newFile, function (err, result) {
+        newData = result;
+    });
+
+    let trans = [];
+    newData.TransactionList.SupportTransaction.forEach(transact => {
+
+        const date = transact.$.Date;
+        const narrative = transact.Description[0];
+        const from = transact.Parties[0].From[0];
+        const to = transact.Parties[0].To[0];
+        const amount = + transact.Value[0];
+
+        trans.push(new Transaction(date, from, to, narrative, amount));
+    });
+
+    return trans
+}
 
 // Create transactions and accounts
+const trans2012 = addNewXMLTrans('Transactions2012.xml');
 const trans2013 = addNewJSONTrans('Transactions2013.json');
 const trans2014 = addNewCSVTrans('Transactions2014.csv');
 const trans2015 = addNewCSVTrans('DodgyTransactions2015.csv');
-const trans = trans2013.concat(trans2014, trans2015);
+const trans = trans2012.concat(trans2013, trans2014, trans2015);
 let accounts = createAccounts(trans);
 
 
