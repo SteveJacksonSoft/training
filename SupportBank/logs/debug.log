@@ -1,0 +1,20 @@
+[2017-12-06T14:49:23.081] [DEBUG] index.js - SupportBank has started.
+[2017-12-06T14:49:23.086] [DEBUG] index.js - trans[148]: from is of wrong format.
+[2017-12-06T14:49:23.088] [DEBUG] index.js - trans[148]: to is of wrong format.
+[2017-12-06T14:49:23.088] [DEBUG] index.js - trans[148]: reason is of wrong format.
+[2017-12-06T14:49:23.089] [DEBUG] index.js - trans[148]: amount is not a number.
+[2017-12-06T14:49:23.090] [DEBUG] index.js - trans[175]: amount is not a number.
+[2017-12-06T14:49:23.091] [DEBUG] index.js - trans[200]: from is of wrong format.
+[2017-12-06T14:49:23.092] [DEBUG] index.js - trans[200]: to is of wrong format.
+[2017-12-06T14:49:23.093] [DEBUG] index.js - trans[200]: reason is of wrong format.
+[2017-12-06T14:49:23.097] [DEBUG] index.js - trans[200]: amount is not a number.
+[2017-12-06T14:50:44.390] [DEBUG] index.js - SupportBank has started.
+[2017-12-06T14:50:44.394] [DEBUG] index.js - trans[148]: from is of wrong format.
+[2017-12-06T14:50:44.396] [DEBUG] index.js - trans[148]: to is of wrong format.
+[2017-12-06T14:50:44.397] [DEBUG] index.js - trans[148]: reason is of wrong format.
+[2017-12-06T14:50:44.398] [DEBUG] index.js - trans[148]: amount is not a number.
+[2017-12-06T14:50:44.398] [DEBUG] index.js - trans[175]: amount is not a number.
+[2017-12-06T14:50:44.400] [DEBUG] index.js - trans[200]: from is of wrong format.
+[2017-12-06T14:50:44.400] [DEBUG] index.js - trans[200]: to is of wrong format.
+[2017-12-06T14:50:44.401] [DEBUG] index.js - trans[200]: reason is of wrong format.
+[2017-12-06T14:50:44.402] [DEBUG] index.js - trans[200]: amount is not a number.

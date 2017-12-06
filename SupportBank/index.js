@@ -1,6 +1,17 @@
 const readline = require('readline-sync');
 const fs = require('fs');
+const log4js = require('log4js');
+const logger = log4js.getLogger('index.js');
+log4js.configure({
+    appenders: {
+        file: { type: 'fileSync', filename: 'logs/debug.log' }
+    },
+    categories: {
+        default: { appenders: ['file'], level: 'debug'}
+    }
+});
 
+logger.debug('SupportBank has started.');
 
 // Classes
 class Account{
@@ -29,15 +40,21 @@ class Transaction{
 function findBalance( name , transList ) {
     let balance = 0;
     for ( let i = 0; i < transList.length; i++){
+
         if ( transList[i].from === name ){
             balance -= transList[i].amount;
             balance = Math.round(balance*100) / 100;
         }
+
         if ( transList[i].to === name){
             balance += transList[i].amount;
             balance = Math.round(balance*100) / 100;
         }
     }
+
+    // if (isNaN(balance)) {
+    //     log.error('account[' + i + ']: balance is not a number.')
+    // }
     return balance
 }
 
@@ -70,10 +87,59 @@ function cleanArray(inputArray) {
     return inputArray
 }
 
+function createTrans(lines) {
 
-// Variables
-let people = [],
-    accounts = [];
+    let trans = [];
+
+    for (let i = 0; i < lines.length; i++) {
+
+        const [date, from, to, reason, amount] = lines[i].split(',');
+
+        // Log problems
+        if (typeof date !== 'string') {
+            logger.debug('trans[' + i + ']: date is of wrong format.');
+        }
+        if (typeof from !== 'string') {
+            logger.debug('trans[' + i + ']: from is of wrong format.');
+        }
+        if (typeof to !== 'string') {
+            logger.debug('trans[' + i + ']: to is of wrong format.');
+        }
+        if (typeof reason !== 'string') {
+            logger.debug('trans[' + i + ']: reason is of wrong format.');
+        }
+        if (isNaN(+amount)) {
+            logger.debug('trans[' + i + ']: amount is not a number.');
+        }
+
+        // Make transaction
+        if (date && from && to && reason && amount) { // Avoid lines containing undefined
+            trans.push(new Transaction(date, from, to, reason, +amount));
+        }
+
+    }
+    return trans
+}
+
+function createAccounts(trans) {
+    let people = [];
+    let accounts = [];
+
+    trans.forEach(function(transact) { // Get list of names and make their accounts
+        if ( people.indexOf( transact.from ) === -1 ){
+            people.push( transact.from );
+            let newAccount = new Account( transact.from , trans );
+            accounts.push(newAccount);
+        }
+
+        if ( people.indexOf( transact.to ) === -1 ){
+            people.push( transact.to );
+            let newAccount = new Account( transact.to , trans );
+            accounts.push(newAccount);
+        }
+    });
+    return accounts
+}
 
 
 // Read and parse data
@@ -84,38 +150,13 @@ const lines2015 = data2015.split('\n');
 let lines = lines2014.slice(1).concat( lines2015.slice(1) ); // Get rid of title lines and concat
 lines = cleanArray( lines ); // Get rid of undefined lines
 
-let trans = [];
+
+// Create transactions and accounts
+let trans = createTrans(lines);
+let accounts = createAccounts(trans);
 
 
-// Create transactions
-lines.forEach(line => {
-    const [ date , from , to , narrative , amount ] = line.split(',');
-
-    if (date && from && to && narrative && amount){ // Avoid errant lines
-        trans.push(new Transaction(date, from, to, narrative, +amount));
-    }
-
-});
-
-
-// Create accounts
-trans.forEach(function(transact) { // Get list of names and make their accounts
-    if ( people.indexOf( transact.from ) === -1 ){
-        people = people.concat( transact.from );
-        let newAccount = new Account( transact.from , trans );
-        accounts = accounts.concat(newAccount);
-    }
-
-    if ( people.indexOf( transact.to ) === -1 ){
-        people = people.concat( transact.to );
-        let newAccount = new Account( transact.to , trans );
-        accounts = accounts.concat(newAccount);
-    }
-});
-
-
-// Get rid of undefineds
-people = cleanArray( people );
+// Get rid of undefineds - may be unnecessary
 accounts = cleanArray( accounts );
 trans = cleanArray( trans );
 
@@ -131,10 +172,10 @@ while (true){
     if ( command === 'List All' ){
         listAll();
     }else{
-        for ( let i = 0; i < people.length; i++){
+        for ( let i = 0; i < accounts.length; i++){
 
-            if ( command.indexOf( people[i] ) !== -1 ){
-                listTrans( people[i] , trans );
+            if ( command.indexOf( accounts[i].name ) !== -1 ){
+                listTrans( accounts[i].name , trans );
                 break
             }
 
