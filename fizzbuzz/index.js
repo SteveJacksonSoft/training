@@ -1,7 +1,6 @@
 const readline = require('readline-sync');
 
-let minJ,
-    bIndex,
+let bIndex,
     readOut = "",
     oldOut = "",
     rules = Array(6),
@@ -44,7 +43,7 @@ function rule13(num , readOut){
 // For multiples of 17 reverse order of words
 function rule17(num , readOut){
     if ( num%17 === 0 ){
-        maxJ = readOut.length;
+        let maxJ = readOut.length;
         oldOut = readOut;
         readOut = "";
         for (let j=0;j<=maxJ;j=j+4){
