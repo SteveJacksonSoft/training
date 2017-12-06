@@ -13,6 +13,7 @@ log4js.configure({
 
 logger.debug('SupportBank has started.');
 
+
 // Classes
 class Account{
     constructor(name, transList) {
@@ -38,6 +39,8 @@ class Transaction{
 
 // Functions
 function findBalance( name , transList ) {
+    // Finds the balance of an account by looking through the list of transactions
+
     let balance = 0;
     for ( let i = 0; i < transList.length; i++){
 
@@ -55,13 +58,17 @@ function findBalance( name , transList ) {
     return balance
 }
 
-function listAll() {
+function listAll(accounts) {
+    // Lists all accounts in the array
+
     for (let i = 0; i < accounts.length; i++) {
         console.log(accounts[i].name + ' ' + accounts[i].balance + '\n');
     }
 }
 
 function listTrans(name, transList) {
+    // Lists transactions in transList involving the name
+
     transList.forEach(transact => {
 
         if ( transact.from.toLowerCase() === name.toLowerCase() || transact.to.toLowerCase() === name.toLowerCase() ){
@@ -73,6 +80,8 @@ function listTrans(name, transList) {
 }
 
 function cleanArray(inputArray) {
+    // Removes undefined entries from an array
+
     for ( let i = 0; i <inputArray.length; i++ ){
 
         while ( inputArray[i] === undefined && i < inputArray.length){
@@ -84,7 +93,8 @@ function cleanArray(inputArray) {
     return inputArray
 }
 
-function createTrans(lines) {
+function linesToTrans(lines) {
+    // Returns list of transactions from  lines of CSV
 
     let trans = [];
 
@@ -120,6 +130,8 @@ function createTrans(lines) {
 }
 
 function createAccounts(trans) {
+    // Returns list of accounts for anyone involved in the trans list
+
     let people = [];
     let accounts = [];
 
@@ -139,28 +151,41 @@ function createAccounts(trans) {
     return accounts
 }
 
+function addNewCSVTrans(fileName) {
+    // Returns list of transactions from a CSV file
 
-// Read and parse data
-const data2014 = fs.readFileSync('Transactions2014.csv','utf8');
-const data2015 = fs.readFileSync('DodgyTransactions2015.csv','utf8');
-const lines2014 = data2014.split('\n');
-const lines2015 = data2015.split('\n');
-let lines = lines2014.slice(1).concat( lines2015.slice(1) ); // Get rid of title lines and concat
-lines = cleanArray( lines ); // Get rid of undefined lines
+    const newData = fs.readFileSync(fileName,'utf8');
+    let lines = newData.split('\n');
+    lines.splice(0,1); // Get rid of title line
+    lines = cleanArray(lines); // Get rid of undefined lines
+
+    return linesToTrans(lines)
+}
+
+function addNewJSONTrans(fileName) {
+    // Returns list of transactions from a JSON file
+
+    const newData = fs.readFileSync(fileName,'utf8');
+    const parsedData = JSON.parse(newData);
+    let transList = [];
+    parsedData.forEach(transact => {
+        transList.push( new Transaction(transact.Date, transact.FromAccount, transact.ToAccount, transact.Narrative, transact.Amount));
+    });
+    return transList
+}
+
 
 
 // Create transactions and accounts
-let trans = createTrans(lines);
+const trans2013 = addNewJSONTrans('Transactions2013.json');
+const trans2014 = addNewCSVTrans('Transactions2014.csv');
+const trans2015 = addNewCSVTrans('DodgyTransactions2015.csv');
+const trans = trans2013.concat(trans2014, trans2015);
 let accounts = createAccounts(trans);
 
 
-// Get rid of undefineds - may be unnecessary
-accounts = cleanArray( accounts );
-trans = cleanArray( trans );
-
-
 // Commands
-while (true){
+while (true) {
     console.log(' Enter a command ("List All" or "List Account [Name]") or enter "q" to quit.');
     let command = readline.prompt();
 
@@ -168,7 +193,7 @@ while (true){
         break
     }
     if ( command === 'List All' ){
-        listAll();
+        listAll(accounts);
     }else{
         for ( let i = 0; i < accounts.length; i++){
 
