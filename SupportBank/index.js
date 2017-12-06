@@ -52,9 +52,6 @@ function findBalance( name , transList ) {
         }
     }
 
-    // if (isNaN(balance)) {
-    //     log.error('account[' + i + ']: balance is not a number.')
-    // }
     return balance
 }
 
@@ -110,6 +107,7 @@ function createTrans(lines) {
         }
         if (isNaN(+amount)) {
             logger.debug('trans[' + i + ']: amount is not a number.');
+            console.log('The amount in line ' + i + ' of the inputted data is not a number. This will mean that the balance of anyone involved in this transaction(' + from + ' and ' + to + ') will not be given.');
         }
 
         // Make transaction
