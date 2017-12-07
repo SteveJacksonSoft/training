@@ -23,12 +23,8 @@ function addNewJSONTrans(fileName) {
     const newData = fs.readFileSync(fileName,'utf8');
     const parsedData = JSON.parse(newData);
 
-    return parsedData.map( transact => {
-        new Transaction(moment(transact.Date)._d.toString().slice(0,15),
-            transact.FromAccount,
-            transact.ToAccount,
-            transact.Narrative,
-            transact.Amount)} );
+    return parsedData.map( transact =>
+        new Transaction(moment(transact.Date)._d.toString().slice(0,15), transact.FromAccount, transact.ToAccount, transact.Narrative, transact.Amount) );
 }
 
 exports.addjson = addNewJSONTrans;

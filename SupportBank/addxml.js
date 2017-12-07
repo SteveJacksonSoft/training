@@ -22,6 +22,7 @@ function addNewXMLTrans(fileName) {
     const newFile = fs.readFileSync(fileName, 'utf8');
 
     let trans = [];
+
     xml2js.parseString(newFile, function (err, result) {
         let date, narrative, from, to, amount;
         for (let i = 0; i< result.TransactionList.SupportTransaction.length; i++) {
@@ -34,31 +35,19 @@ function addNewXMLTrans(fileName) {
             } else {
                 date = moment.fromOADate(transact.$.Date)._d.toString().slice(0, 15);
             }
-            if (typeof transact.Description[0] !== String) {
-                console.log('The narrative entered in transaction ' + (i + 1) + ' of the file ' + fileName + ' is not a string.');
-                narrative = 'Invalid narrative';
-            } else {
-                narrative = transact.Description[0];
-            }
-            if (typeof transact.Parties[0].From[0] !== String) {
-                console.log('The from-account entered in transaction ' + (i + 1) + ' of the file ' + fileName + ' is not a string.');
-                from = 'Invalid from-account';
-            } else {
-                from = transact.Parties[0].From[0];
-            }
-            if (typeof transact.Parties[0].To[0] !== String){
-                console.log('The to-account entered in transaction ' + (i + 1) + ' of the file ' + fileName + ' is not a string.');
-                to = 'Invalid to-account';
-            } else {
-                to = transact.Parties[0].To[0];
-            }
+
+            narrative = transact.Description[0];
+            from = transact.Parties[0].From[0];
+            to = transact.Parties[0].To[0];
+
             if (isNaN(transact.Value[0])) {
                 console.log('The amount entered in transaction ' + (i + 1) + ' of the file ' + fileName + ' is not a number.');
             }
             amount = + transact.Value[0];
 
-
-            trans.push(new Transaction(date, from, to, narrative, amount));
+            if (date && from && to && narrative && amount) {
+                trans.push(new Transaction(date, from, to, narrative, amount));
+            }
         }
     });
 
