@@ -18,19 +18,19 @@ class Transaction {
     }
 }
 
-function cleanArray(inputArray) {
-    // Removes undefined entries from an array
-
-    for ( let i = 0; i <inputArray.length; i++ ){
-
-        while ( inputArray[i] === undefined && i < inputArray.length){
-            inputArray.splice(i,1);
-        }
-
-    }
-
-    return inputArray
-}
+// function cleanArray(inputArray) {
+//     // Removes undefined entries from an array
+//
+//     for ( let i = 0; i <inputArray.length; i++ ){
+//
+//         while ( inputArray[i] === undefined && i < inputArray.length){
+//             inputArray.splice(i,1);
+//         }
+//
+//     }
+//
+//     return inputArray
+// }
 
 function linesToTrans(lines) {
     // Returns list of transactions from  lines of CSV
@@ -74,7 +74,7 @@ function addNewCSVTrans(fileName) {
     const newData = fs.readFileSync(fileName,'utf8');
     let lines = newData.split('\n');
     lines.splice(0,1); // Get rid of title line
-    lines = cleanArray(lines); // Get rid of undefined lines
+    // lines = cleanArray(lines); // Get rid of undefined lines
 
     return linesToTrans(lines)
 }

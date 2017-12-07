@@ -1,5 +1,7 @@
 const fs = require('fs');
 const moment = require('moment-msdate');
+const log4js = require('log4js');
+const logger = log4js.getLogger('index.js');
 
 class Transaction{
     constructor(date, from, to, narrative, amount) {
@@ -20,11 +22,13 @@ function addNewJSONTrans(fileName) {
 
     const newData = fs.readFileSync(fileName,'utf8');
     const parsedData = JSON.parse(newData);
-    let transList = [];
-    parsedData.forEach(transact => {
-        transList.push( new Transaction(moment(transact.Date)._d.toString().slice(0,15), transact.FromAccount, transact.ToAccount, transact.Narrative, transact.Amount));
-    });
-    return transList
+
+    return parsedData.map( transact => {
+        new Transaction(moment(transact.Date)._d.toString().slice(0,15),
+            transact.FromAccount,
+            transact.ToAccount,
+            transact.Narrative,
+            transact.Amount)} );
 }
 
 exports.addjson = addNewJSONTrans;

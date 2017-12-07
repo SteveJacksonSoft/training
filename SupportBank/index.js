@@ -24,11 +24,11 @@ log4js.configure({
     }
 });
 
-logger.debug('SupportBank has started.');
+logger.info('SupportBank has started.');
 
 
 // Classes
-class Account{
+class Account {
     constructor(name, transList) {
         this.name = name;
         this.balance = findBalance(name, transList);
@@ -44,38 +44,26 @@ function findBalance( name , transList ) {
     for ( let i = 0; i < transList.length; i++){
 
         if ( transList[i].from === name ){
-            balance -= transList[i].amount;
-            balance = Math.round(balance*100) / 100;
+            if (isNaN(transList[i].amount)) {
+                logger.warn('Amount in transaction ' + i + ' is not a number. Balance of ' + name + ' will not be modified.');
+
+            } else {
+                balance -= transList[i].amount;
+                balance = Math.round(balance * 100) / 100;
+            }
         }
 
         if ( transList[i].to === name){
-            balance += transList[i].amount;
-            balance = Math.round(balance*100) / 100;
+            if (isNaN(transList[i].to)) {
+                logger.warn('Amount in transaction ' + i + ' is not a number. Balance of ' + name + ' will not be modified.');
+            } else {
+                balance += transList[i].amount;
+                balance = Math.round(balance * 100) / 100;
+            }
         }
     }
 
     return balance
-}
-
-function listAll(accounts) {
-    // Lists all accounts in the array
-
-    for (let i = 0; i < accounts.length; i++) {
-        console.log(accounts[i].name + ' ' + accounts[i].balance + '\n');
-    }
-}
-
-function listTrans(name, transList) {
-    // Lists transactions in transList involving the name
-
-    transList.forEach(transact => {
-
-        if ( transact.from.toLowerCase() === name.toLowerCase() || transact.to.toLowerCase() === name.toLowerCase() ){
-            const transString = transact.toString();
-            console.log(transString);
-        }
-
-    });
 }
 
 function createAccounts(trans) {
@@ -98,6 +86,27 @@ function createAccounts(trans) {
         }
     });
     return accounts
+}
+
+function listAll(accounts) {
+    // Lists all accounts in the array
+
+    for (let i = 0; i < accounts.length; i++) {
+        console.log(accounts[i].name + ' ' + accounts[i].balance + '\n');
+    }
+}
+
+function listTrans(name, transList) {
+    // Lists transactions in transList involving the name
+
+    transList.forEach(transact => {
+
+        if ( transact.from.toLowerCase() === name.toLowerCase() || transact.to.toLowerCase() === name.toLowerCase() ){
+            const transString = transact.toString();
+            console.log(transString);
+        }
+
+    });
 }
 
 // Create transactions and accounts
