@@ -13,6 +13,7 @@
     "jade": "~1.11.0",
     "log4js": "^2.3.12",
     "moment": "^2.19.3",
+    "moment-msdate": "^2.0.1",
     "morgan": "~1.9.0",
     "readline-sync": "^1.4.7",
     "serve-favicon": "~2.4.5",

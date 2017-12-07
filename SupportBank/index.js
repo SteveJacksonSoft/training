@@ -1,8 +1,17 @@
 const readline = require('readline-sync');
-const fs = require('fs');
+const moment = require('moment-msdate');
 const log4js = require('log4js');
+const addCSV = require('./addcsv.js');
+const addJSON = require('./addjson.js');
+const addXML = require('./addxml.js');
 const logger = log4js.getLogger('index.js');
-const xml2js = require('xml2js');
+
+// Moment tryout
+let date1 = moment('21/3/14', 'DD-M-YY');
+let date2 = moment("2013-01-05T00:00:00");
+console.log(date1);
+console.log(date2);
+
 
 
 // Logger configuration
@@ -24,20 +33,6 @@ class Account{
         this.name = name;
         this.balance = findBalance(name, transList);
     };
-}
-
-class Transaction{
-    constructor(date, from, to, narrative, amount) {
-        this.date = date;
-        this.from = from;
-        this.to = to;
-        this.reason = narrative;
-        this.amount = amount;
-    };
-
-    toString() {
-        return 'Date:' + this.date + '; From: ' + this.from + '; To: ' + this.to + '; Reason: ' + this.reason + '; Amount: ' + this.amount;
-    }
 }
 
 
@@ -83,56 +78,6 @@ function listTrans(name, transList) {
     });
 }
 
-function cleanArray(inputArray) {
-    // Removes undefined entries from an array
-
-    for ( let i = 0; i <inputArray.length; i++ ){
-
-        while ( inputArray[i] === undefined && i < inputArray.length){
-            inputArray.splice(i,1);
-        }
-
-    }
-
-    return inputArray
-}
-
-function linesToTrans(lines) {
-    // Returns list of transactions from  lines of CSV
-
-    let trans = [];
-
-    for (let i = 0; i < lines.length; i++) {
-
-        const [date, from, to, reason, amount] = lines[i].split(',');
-
-        // Log problems
-        if (typeof date !== 'string') {
-            logger.debug('trans[' + i + ']: date is of wrong format.');
-        }
-        if (typeof from !== 'string') {
-            logger.debug('trans[' + i + ']: from is of wrong format.');
-        }
-        if (typeof to !== 'string') {
-            logger.debug('trans[' + i + ']: to is of wrong format.');
-        }
-        if (typeof reason !== 'string') {
-            logger.debug('trans[' + i + ']: reason is of wrong format.');
-        }
-        if (isNaN(+amount)) {
-            logger.debug('trans[' + i + ']: amount is not a number.');
-            console.log('The amount in line ' + i + ' of the inputted data is not a number. This will mean that the balance of anyone involved in this transaction(' + from + ' and ' + to + ') will not be given.');
-        }
-
-        // Make transaction
-        if (date && from && to && reason && amount) { // Avoid lines containing undefined
-            trans.push(new Transaction(date, from, to, reason, +amount));
-        }
-
-    }
-    return trans
-}
-
 function createAccounts(trans) {
     // Returns list of accounts for anyone involved in the trans list
 
@@ -155,58 +100,11 @@ function createAccounts(trans) {
     return accounts
 }
 
-function addNewCSVTrans(fileName) {
-    // Returns list of transactions from a CSV file
-
-    const newData = fs.readFileSync(fileName,'utf8');
-    let lines = newData.split('\n');
-    lines.splice(0,1); // Get rid of title line
-    lines = cleanArray(lines); // Get rid of undefined lines
-
-    return linesToTrans(lines)
-}
-
-function addNewJSONTrans(fileName) {
-    // Returns list of transactions from a JSON file
-
-    const newData = fs.readFileSync(fileName,'utf8');
-    const parsedData = JSON.parse(newData);
-    let transList = [];
-    parsedData.forEach(transact => {
-        transList.push( new Transaction(transact.Date, transact.FromAccount, transact.ToAccount, transact.Narrative, transact.Amount));
-    });
-    return transList
-}
-
-function addNewXMLTrans(fileName) {
-    // Returns list of transactions from an XML file
-
-    const newFile = fs.readFileSync(fileName, 'utf8');
-    let newData;
-    xml2js.parseString(newFile, function (err, result) {
-        newData = result;
-    });
-
-    let trans = [];
-    newData.TransactionList.SupportTransaction.forEach(transact => {
-
-        const date = transact.$.Date;
-        const narrative = transact.Description[0];
-        const from = transact.Parties[0].From[0];
-        const to = transact.Parties[0].To[0];
-        const amount = + transact.Value[0];
-
-        trans.push(new Transaction(date, from, to, narrative, amount));
-    });
-
-    return trans
-}
-
 // Create transactions and accounts
-const trans2012 = addNewXMLTrans('Transactions2012.xml');
-const trans2013 = addNewJSONTrans('Transactions2013.json');
-const trans2014 = addNewCSVTrans('Transactions2014.csv');
-const trans2015 = addNewCSVTrans('DodgyTransactions2015.csv');
+const trans2012 = addXML.addxml('Transactions2012.xml');
+const trans2013 = addJSON.addjson('Transactions2013.json');
+const trans2014 = addCSV.addcsv('Transactions2014.csv');
+const trans2015 = addCSV.addcsv('DodgyTransactions2015.csv');
 const trans = trans2012.concat(trans2013, trans2014, trans2015);
 let accounts = createAccounts(trans);
 
@@ -216,21 +114,20 @@ while (true) {
     console.log(' Enter a command ("List All" or "List Account [Name]") or enter "q" to quit.');
     let command = readline.prompt();
 
-    if ( command.toLowerCase() === 'q' ){
+    if (command.toLowerCase() === 'q') {
         break
     }
-    if ( command === 'List All' ){
+    if (command === 'List All') {
         listAll(accounts);
-    }else{
-        for ( let i = 0; i < accounts.length; i++){
+    } else {
+        for (let i = 0; i < accounts.length; i++) {
 
-            if ( command.indexOf( accounts[i].name ) !== -1 ){
-                listTrans( accounts[i].name , trans );
+            if (command.indexOf(accounts[i].name) !== -1) {
+                listTrans(accounts[i].name, trans);
                 break
             }
 
         }
     }
-
 
 }
