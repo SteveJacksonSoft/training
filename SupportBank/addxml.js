@@ -40,7 +40,7 @@ function addNewXMLTrans(fileName) {
             } else {
                 narrative = transact.Description[0];
             }
-            if (typeof transact.Parties[0].From[0] !=== String) {
+            if (typeof transact.Parties[0].From[0] !== String) {
                 console.log('The from-account entered in transaction ' + (i + 1) + ' of the file ' + fileName + ' is not a string.');
                 from = 'Invalid from-account';
             } else {
