@@ -1,0 +1,14 @@
+[2017-12-08T10:39:05.054] [DEBUG] index.js - Programme started.
+[2017-12-08T10:39:42.025] [DEBUG] index.js - Programme started.
+[2017-12-08T10:40:34.442] [DEBUG] index.js - Received stop code: 490008660N
+[2017-12-08T10:43:58.379] [DEBUG] index.js - Received stop code: 490008660N
+[2017-12-08T10:46:23.603] [DEBUG] index.js - Programme terminating.
+[2017-12-08T10:52:22.661] [DEBUG] index.js - Programme started.
+[2017-12-08T10:52:40.540] [DEBUG] index.js - Received stop code: 490008660N
+[2017-12-08T10:52:42.151] [DEBUG] index.js - Programme terminating.
+[2017-12-08T10:52:42.356] [DEBUG] index.js - Received response from TFL.
+[2017-12-08T10:52:42.361] [DEBUG] index.js - Printed first bus.
+[2017-12-08T10:52:42.364] [DEBUG] index.js - Printed second bus.
+[2017-12-08T10:52:42.371] [DEBUG] index.js - Printed third bus.
+[2017-12-08T10:52:42.373] [DEBUG] index.js - Printed fourth bus.
+[2017-12-08T10:52:42.377] [DEBUG] index.js - Printed fifth bus.
