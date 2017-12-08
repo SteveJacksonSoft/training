@@ -2661,3 +2661,6 @@
 [2017-12-08T15:39:27.468] [DEBUG] index.js - Programme started.
 [2017-12-08T15:39:33.277] [DEBUG] index.js - Programme started.
 [2017-12-08T15:41:30.102] [DEBUG] index.js - Programme started.
+[2017-12-08T18:14:35.278] [DEBUG] index.js - Programme started.
+[2017-12-08T18:14:39.364] [DEBUG] index.js - Searching by postcode.
+[2017-12-08T18:14:39.434] [ERROR] index.js - Bad request.

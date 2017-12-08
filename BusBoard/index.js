@@ -16,51 +16,54 @@ log4js.configure({
 const ord = ['first' , 'second' , 'third' , 'fourth' , 'fifth'];
 
 // Functions
+function newRequest(URL) {
+    // Get JSON data from a URL
+
+    return new Promise((resolve, reject) => {
+        request(URL, function(err, response, body) {
+            if (err) {
+                console.log('Error making request:', err);
+            } // Error
+
+            if (response.statusCode === '200') {
+                logger.debug('Received data.');
+                console.log('Success');
+                resolve(body);
+            } else {
+                logger.error('Bad request.');
+                console.log('An error has occurred.');
+                reject('Request error.');
+            } // Response
+        });
+    });
+}
+
 function printNextBuses(stopCode) {
     // Gets next 5 buses stopping at stop from TFL
 
-    request('https://api.tfl.gov.uk/StopPoint/' + stopCode + '/Arrivals?app_id=25b29ea5&app_key=ff583ea695e335856a814aedcc475d9c',
-        function(err, response, body) {
-            if (err) {
-                console.log('Error:', err);
-            } // Error
-            switch(response.statusCode) { //
-                case '200':
-                    logger.debug('Valid stop code. Received data.');
-                    console.log('Success');
-                    break;
-                case '400':
-                    logger.error('Bad request.');
-                    console.log('The bus stop code entered is not valid.');
-                    return;
-                case '404':
-                    logger.error('Stop Code not valid');
-                    console.log('The bus stop code entered is not valid.');
-                    return;
-                case '500':
-                    logger.error('Server error.');
-                    console.log('A server error has occurred.');
-                    break;
-            } // Response
+    const busReq = newRequest('https://api.tfl.gov.uk/StopPoint/' + stopCode +
+        '/Arrivals?app_id=25b29ea5&app_key=ff583ea695e335856a814aedcc475d9c');
 
-            let buses = JSON.parse(body);
+    busReq.then(body =>{
+        let buses = JSON.parse(body);
 
-            // Assign different buses chronological rankings
-            for (let i = 0; i<5; i++){
-                let nextBus = 0;
-                buses.forEach(function(bus, i) {
-                    if (bus.expectedArrival < buses[nextBus].expectedArrival) {
-                        nextBus = i;
-                    }
-                });
-                console.log('The ' + ord[i] + ' bus will be the ' + buses[nextBus].lineName + '. Expected arrival time: ' + buses[nextBus].expectedArrival.slice(11,19) + ' Destination: ' + buses[nextBus].destinationName);
-                logger.debug('Printed ' + ord[i] + ' bus.');
-                buses.splice(nextBus,1);
-            }
+        // Print buses in order of arrival
+        for (let i = 0; i<5; i++) {
+            let nextBus = 0;
+            buses.forEach(function(bus, i) {
+                if (bus.expectedArrival < buses[nextBus].expectedArrival) {
+                    nextBus = i;
+                }
+            });
+            console.log('The ' + ord[i] + ' bus will be the '
+                + buses[nextBus].lineName + '. Expected arrival time: '
+                + buses[nextBus].expectedArrival.slice(11,19) + ' Destination: '
+                + buses[nextBus].destinationName);
+            logger.debug('Printed ' + ord[i] + ' bus.');
+            buses.splice(nextBus,1);
         }
-    );
 
-
+    });
 }
 
 function searchByStopCode() {
@@ -75,8 +78,6 @@ function searchByStopCode() {
     logger.debug('Received stop code: ' + stopCode);
 
     printNextBuses(stopCode);
-
-    searchByStopCode();
 }
 
 function searchByPostcode() {
@@ -85,71 +86,42 @@ function searchByPostcode() {
     // const postcode = readline.prompt();
     const postcode = 'se22 8hf';
     const numStops = 2; // Number of stops to display
-    const reqPostcodeArea = new Promise((resolve,reject) => {
-        request('https://api.postcodes.io/postcodes/' + postcode,
-            function (err, response, body) {
-                resolve([err, response, body])
-            }
-        );
-    });
+    const postcodeReq = newRequest('https://api.postcodes.io/postcodes/' + postcode);
 
-    reqPostcodeArea.then( (err, response, body)
-        switch (body.status) {
-            case '200':
-                logger.debug('Valid postcode. Received data.');
-                console.log('Success');
-                break;
-            case '400':
-                logger.error('Bad request.');
-                console.log('The bus postcode entered is not valid.');
-                return;
-            case '404':
-                logger.error('Postcode not valid');
-                console.log('The bus postcode entered is not valid.');
-                return;
-            case '500':
-                logger.error('Server error.');
-                console.log('A server error has occurred.');
-                return;
-        } // If errors in getting postcode
+    postcodeReq.then( body => {
         const postcodeData = JSON.parse(body);
         const searchRadius = 2000;
-        request('https://api.tfl.gov.uk/StopPoint?stopTypes=NaptanPublicBusCoachTram%2CNaptanBusCoachStation&radius=' + searchRadius + '&useStopPointHierarchy=true&modes=bus&returnLines=true&lat=' + postcodeData.result.latitude + '&lon=' + postcodeData.result.longitude + '?app_id=25b29ea5&app_key=ff583ea695e335856a814aedcc475d9c',
-            function (err, response, body) {
 
-        // Get stop ids for *numStops* closest stops
-        let stops = Array(JSON.parse(body));
-        let stopCodes = [];
-        console.log(stops);
-        for (let i = 0; i < numStops; i++) {
-            let nextStop = 0;
-            stops.forEach(function (stop, i) {
-                if (stop.distance < stops[nextStop].distance) {
-                    nextStop = i;
-                }
-            });
-            stopCodes.push(stops[nextStop].id);
-            stops.splice(nextStop, 1);
-        }
+        return newRequest('https://api.tfl.gov.uk/StopPoint?stopTypes=NaptanPublicBusCoachTram'
+            + '%2CNaptanBusCoachStation&radius=' + searchRadius + '&useStopPointHierarchy'
+            + '=true&modes=bus&returnLines=true&lat=' + postcodeData.result.latitude
+            + '&lon=' + postcodeData.result.longitude + '?app_id=25b29ea5&'
+            + 'app_key=ff583ea695e335856a814aedcc475d9c');
+        })
+        .then(body => {
+            // Get stop ids for *numStops* closest stops
+            let stops = Array(JSON.parse(body));
+            let stopCodes = [];
 
-        // Get bus times
-        for (let i = 0; i < numStops; i++) {
-            printNextBuses(stopCodes[i]);
-        }
-        }
-        );
-    )
+            // Get next closest stops iteratively
+            for (let i = 0; i < numStops; i++) {
+                let nextStop = 0;
+                stops.forEach(function (stop, i) {
+                    if (stop.distance < stops[nextStop].distance) {
+                        nextStop = i;
+                    }
+                });
+                stopCodes.push(stops[nextStop].id);
+                stops.splice(nextStop, 1);
+            }
 
+            // Get bus times
+            for (let i = 0; i < numStops; i++) {
+                printNextBuses(stopCodes[i]);
+            }
+        });
 }
 
-// const promise = new Promise((resolve, reject) => {
-//    readline.question('bigman', resolve)
-// });
-// console.log(promise);
-// promise.then(answer => console.log(answer.length), ()=> console.log('explain!'))
-//     .then(()=> 'pig')
-//     .then(me => console.log(me.length))
-//     .catch(err => console.log(err));
 
 
 // Programme
