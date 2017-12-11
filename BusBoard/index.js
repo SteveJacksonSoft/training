@@ -11,11 +11,157 @@ log4js.configure({
     }
 });
 
-const pcSearch = require('./postcodeSearch');
-const scSearch = require('./stopCodeSearch');
+const pc2pos = require('./pc2pos');
+const pos2stops = require('./pos2stops');
+const s2bus = require('./stops2buses');
 const ord = ['First' , 'Second' , 'Third' , 'Fourth' , 'Fifth'];
 
 // Functions
+function newRequest(URL) {
+    // Get JSON data from a URL - returns promise
+
+    return new Promise((resolve, reject) => {
+        request(URL, function(err, response, body) {
+            if (err) {
+                console.log('Error making request:', err);
+            } // Error
+
+            if (response.statusCode === 200) {
+                logger.debug('Received data.');
+                resolve(body);
+            } else {
+                logger.error('Bad request. Status code: ' + response.statusCode);
+                logger.error('Body: ' + body);
+                console.log('An error has occurred.');
+                reject('An error occurred when requesting data from the Internet.');
+            }
+        });
+    });
+}
+
+function printNextBuses(stops) {
+    // Gets next 5 buses stopping at each stop (stops must be array of
+    // objects {code, name}) from TFL
+
+    let busReq = [];
+    stops.forEach((stop, numOfStop) => {
+
+        busReq[numOfStop] = newRequest('https://api.tfl.gov.uk/StopPoint/' + stop.code +
+            '/Arrivals?app_id=25b29ea5&app_key=ff583ea695e335856a814aedcc475d9c');
+
+        busReq[numOfStop].then(body => {
+                if (stops.length > 1) {
+                    console.log('\n\n' + ord[numOfStop] + ' nearest bus stop: ' + stop.name);
+                }
+                let buses = JSON.parse(body);
+                let numBuses = 5;
+
+                // Print next numBuses buses in order of arrival
+                buses.sort((bus1, bus2) => {
+                    return bus1.expectedArrival - bus2.expectedArrival;
+                });
+                buses.splice(numBuses); // Get rid of extra buses
+                buses.slice(0,numBuses).forEach(bus => {
+
+                    console.log('The ' + ord[i].toLowerCase() + ' bus will be the '
+                        + bus.lineName + '. Expected arrival time: '
+                        + bus.expectedArrival.slice(11, 19) + ' Destination: '
+                        + bus.destinationName);
+                    logger.debug('Printed ' + ord[i].toLowerCase() + ' bus.');
+
+                });
+            })
+            .catch((explanation) => {
+                logger.fatal('Problem when requesting bus stop information. Stop Code: '
+                    + stopCode + '\nProgramme closing.');
+                console.log(explanation);
+                console.log('The programme will close.');
+            });
+
+    });
+}
+
+function searchByStopCode() {
+    logger.debug('Searching by stop code.');
+
+    console.log('Please enter a new bus stop code or enter q to quit.');
+    const stopCode = readline.prompt();
+    if (stopCode.toLowerCase() === 'q') {
+        logger.debug('Programme terminating.');
+        return
+    }
+    logger.debug('Received stop code: ' + stopCode);
+
+    printNextBuses([{code: stopCode}]);
+}
+
+function searchByPostcode() {
+
+    // Enter postcode
+    logger.debug('Searching by postcode.');
+    console.log('Please enter a postcode.');
+    const postcode = readline.prompt();
+    // const postcode = 'se22 8hf';
+
+    // Find Lat and Long
+    const numStops = 2; // Number of stops to display
+    let postcodeProm = new Promise.resolve(postcode);
+    postcodeProm.then(postcode => pc2pos.getLatLon(postcode))
+        .then(pos => pos2stops.getStops(pos))
+        .then(stops => s2bus.getBuses(stops))
+
+
+
+
+
+    // const postcodeReq = newRequest('https://api.postcodes.io/postcodes/' + postcode);
+
+    postcodeReq.then( body => {
+        const postcodeData = JSON.parse(body);
+        const searchRadius = 2000;
+
+        return newRequest('https://api.tfl.gov.uk/StopPoint?stopTypes=NaptanPublicBusCoachTram'
+            + '%2CNaptanBusCoachStation&radius=' + searchRadius + '&useStopPointHierarchy'
+            + '=true&modes=bus&returnLines=true&lat=' + postcodeData.result.latitude
+            + '&lon=' + postcodeData.result.longitude + '&app_id=25b29ea5&'
+            + 'app_key=ff583ea695e335856a814aedcc475d9c');
+        })
+        .then(body => {
+            // Get stop ids for *numStops* closest stops
+            let stops = Array(JSON.parse(body));
+            let usedStops = [];
+
+            stops[0].stopPoints.sort((stop1, stop2) => {
+                return stop1.distance - stop2.distance
+            });
+            stops[0].stopPoints.splice(numStops); // get rid of extra stops
+            stops[0].stopPoints.forEach(stop => {
+                usedStops.push( {
+                    code: stop.id,
+                    name: stop.commonName
+                });
+            });
+
+            // Get & print bus times
+            printNextBuses(usedStops);
+        })
+        .catch((explanation) =>{
+            logger.fatal('Problem when requesting postcode information. Postcode: '
+                + postcode + '\nProgramme closing.');
+            console.log(explanation);
+            console.log('The programme will close.');
+        });
+
+}
+
+function restartMain() {
+    console.log('Would you like to make a new search? Enter q to quit.');
+    let answer = readline.prompt().toLowerCase();
+
+    if (answer !== 'q' && answer !== 'no' && answer !== 'no.') {
+        main();
+    }
+}
 
 function main(){
     console.log('Would you like to search by postcode or stop code?' +
@@ -33,11 +179,11 @@ function main(){
         // Start preferred routine
         if (preference.indexOf('postcode') !== -1) {
             // searchByPostcode();
-            pcSearch.search()
+            searchByPostcode();
             return
         }
         if (preference.indexOf('stop code') !== -1) {
-            scSearch.search();
+            searchByStopCode();
             return
         }
 
@@ -56,4 +202,9 @@ function main(){
 // Programme
 logger.debug('Programme started.');
 
-main();
+// main();
+
+const prom = new Promise((resolve, reject) => {
+    resolve(4);
+});
+console.log(resolve.value);
