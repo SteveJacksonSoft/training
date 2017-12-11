@@ -26,6 +26,11 @@ function getBuses(stop) {
                 );
             }
 
+            // Add stop name in case searching by stop code
+            if (!stop.name) {
+                stop.name = busList[0].stationName;
+            }
+
             return stop
         })
         .catch((explanation) => {

@@ -163,3 +163,30 @@ Programme closing.
 [2017-12-11T16:44:31.984] [DEBUG] index.js - Searching by stop code.
 [2017-12-11T16:44:49.318] [DEBUG] index.js - Received stop code: 490008660N
 [2017-12-11T16:44:51.178] [DEBUG] index.js - Received data.
+[2017-12-11T16:58:00.191] [DEBUG] index.js - Programme started.
+[2017-12-11T16:58:02.746] [DEBUG] index.js - Searching by stop code.
+[2017-12-11T16:58:19.521] [DEBUG] index.js - Received stop code: 490008660N
+[2017-12-11T16:58:22.543] [DEBUG] index.js - Received data.
+[2017-12-11T17:08:28.171] [DEBUG] index.js - Programme started.
+[2017-12-11T17:08:30.520] [DEBUG] index.js - Searching by stop code.
+[2017-12-11T17:08:37.540] [DEBUG] index.js - Received stop code: 490008660N
+[2017-12-11T17:08:37.895] [DEBUG] index.js - Received data.
+[2017-12-11T17:10:02.100] [DEBUG] index.js - Programme started.
+[2017-12-11T17:10:02.106] [DEBUG] index.js - Searching by stop code.
+[2017-12-11T17:10:02.108] [DEBUG] index.js - Received stop code: 490008660N
+[2017-12-11T17:10:21.638] [DEBUG] index.js - Received data.
+[2017-12-11T17:12:50.843] [DEBUG] index.js - Programme started.
+[2017-12-11T17:12:50.848] [DEBUG] index.js - Searching by stop code.
+[2017-12-11T17:12:50.849] [DEBUG] index.js - Received stop code: 490008660N
+[2017-12-11T17:12:51.221] [ERROR] index.js - Bad request. Status code: 404
+[2017-12-11T17:12:51.224] [ERROR] index.js - Body: {"$type":"Tfl.Api.Presentation.Entities.ApiError, Tfl.Api.Presentation.Entities","timestampUtc":"2017-12-11T17:12:27.1008666Z","exceptionType":"EntityNotFoundException","httpStatusCode":404,"httpStatus":"NotFound","relativeUri":"/StopPoint/undefined/Arrivals","message":"The following stop point is not recognised: undefined"}
+[2017-12-11T17:12:51.228] [FATAL] index.js - Problem when requesting bus stop information. Stop Code: undefined
+Programme closing.
+[2017-12-11T17:14:11.381] [DEBUG] index.js - Programme started.
+[2017-12-11T17:14:11.385] [DEBUG] index.js - Searching by stop code.
+[2017-12-11T17:14:11.387] [DEBUG] index.js - Received stop code: 490008660N
+[2017-12-11T17:14:11.580] [DEBUG] index.js - Received data.
+[2017-12-11T17:16:00.741] [DEBUG] index.js - Programme started.
+[2017-12-11T17:16:12.173] [DEBUG] index.js - Searching by stop code.
+[2017-12-11T17:16:24.478] [DEBUG] index.js - Received stop code: 490008660N
+[2017-12-11T17:16:24.629] [DEBUG] index.js - Received data.

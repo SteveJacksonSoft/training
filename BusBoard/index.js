@@ -11,6 +11,7 @@ log4js.configure({
     }
 });
 
+const classes = require('./classes');
 const pc2pos = require('./pc2pos');
 const pos2stops = require('./pos2stops');
 const s2bus = require('./stop2buses');
@@ -19,86 +20,26 @@ const print = require('./printBuses');
 const ord = ['First' , 'Second' , 'Third' , 'Fourth' , 'Fifth'];
 
 
-// Classes
-
-
-// Functions
-function newRequest(URL) {
-    // Get JSON data from a URL - returns promise
-
-    return new Promise((resolve, reject) => {
-        request(URL, function(err, response, body) {
-            if (err) {
-                console.log('Error making request:', err);
-            } // Error
-
-            if (response.statusCode === 200) {
-                logger.debug('Received data.');
-                resolve(body);
-            } else {
-                logger.error('Bad request. Status code: ' + response.statusCode);
-                logger.error('Body: ' + body);
-                console.log('An error has occurred.');
-                reject('An error occurred when requesting data from the Internet.');
-            }
-        });
-    });
-}
-
-function printNextBuses(stops) {
-    // Gets next 5 buses stopping at each stop (stops must be array of
-    // objects {code, name}) from TFL
-
-    let busReq = [];
-    stops.forEach((stop, numOfStop) => {
-
-        busReq[numOfStop] = newRequest('https://api.tfl.gov.uk/StopPoint/' + stop.code +
-            '/Arrivals?app_id=25b29ea5&app_key=ff583ea695e335856a814aedcc475d9c');
-
-        busReq[numOfStop].then(body => {
-                if (stops.length > 1) {
-                    console.log('\n\n' + ord[numOfStop] + ' nearest bus stop: ' + stop.name);
-                }
-                let buses = JSON.parse(body);
-                let numBuses = 5;
-
-                // Print next numBuses buses in order of arrival
-                buses.sort((bus1, bus2) => {
-                    return bus1.expectedArrival - bus2.expectedArrival;
-                });
-                buses.splice(numBuses); // Get rid of extra buses
-                buses.slice(0,numBuses).forEach(bus => {
-
-                    console.log('The ' + ord[i].toLowerCase() + ' bus will be the '
-                        + bus.lineName + '. Expected arrival time: '
-                        + bus.expectedArrival.slice(11, 19) + ' Destination: '
-                        + bus.destinationName);
-                    logger.debug('Printed ' + ord[i].toLowerCase() + ' bus.');
-
-                });
-            })
-            .catch((explanation) => {
-                logger.fatal('Problem when requesting bus stop information. Stop Code: '
-                    + stopCode + '\nProgramme closing.');
-                console.log(explanation);
-                console.log('The programme will close.');
-            });
-
-    });
-}
-
 function searchByStopCode() {
     logger.debug('Searching by stop code.');
 
-    console.log('Please enter a new bus stop code or enter q to quit.');
+    console.log('Please enter a bus stop code or enter q to quit.');
     const stopCode = readline.prompt();
+
     if (stopCode.toLowerCase() === 'q') {
         logger.debug('Programme terminating.');
         return
     }
     logger.debug('Received stop code: ' + stopCode);
 
-    printNextBuses([{code: stopCode}]);
+    let stop = new classes.Stop('',stopCode,[]);
+
+    const busReq = s2bus.getBuses(stop);
+    busReq.then(stop => print.printBuses([stop]))
+        .catch(err => {
+            console.log(err);
+            console.log('Programme closing.');
+        })
 }
 
 function searchByPostcode() {
@@ -137,7 +78,7 @@ function searchByPostcode() {
         });
 }
 
-function restartMain() {
+function restartCommand() {
     console.log('Would you like to make a new search? Enter q to quit.');
     let answer = readline.prompt().toLowerCase();
 
@@ -146,7 +87,7 @@ function restartMain() {
     }
 }
 
-function main(){
+function command(){
     console.log('Would you like to search by postcode or stop code?' +
         ' Enter "q" to quit.');
     let preference = readline.prompt().toLowerCase();
@@ -183,4 +124,4 @@ function main(){
 // Programme
 logger.debug('Programme started.');
 
-main();
+command();
