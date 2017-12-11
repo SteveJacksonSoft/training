@@ -13,8 +13,14 @@ log4js.configure({
 
 const pc2pos = require('./pc2pos');
 const pos2stops = require('./pos2stops');
-const s2bus = require('./stops2buses');
+const s2bus = require('./stop2buses');
+const print = require('./printBuses');
+
 const ord = ['First' , 'Second' , 'Third' , 'Fourth' , 'Fifth'];
+
+
+// Classes
+
 
 // Functions
 function newRequest(URL) {
@@ -101,57 +107,34 @@ function searchByPostcode() {
     logger.debug('Searching by postcode.');
     console.log('Please enter a postcode.');
     const postcode = readline.prompt();
-    // const postcode = 'se22 8hf';
 
     // Find Lat and Long
     const numStops = 2; // Number of stops to display
-    let postcodeProm = new Promise.resolve(postcode);
+    let postcodeProm = new Promise((resolve,reject) => resolve(postcode));
+
+        //PC to Position
     postcodeProm.then(postcode => pc2pos.getLatLon(postcode))
+
+        // Position to stop points
         .then(pos => pos2stops.getStops(pos))
-        .then(stops => s2bus.getBuses(stops))
 
-
-
-
-
-    // const postcodeReq = newRequest('https://api.postcodes.io/postcodes/' + postcode);
-
-    postcodeReq.then( body => {
-        const postcodeData = JSON.parse(body);
-        const searchRadius = 2000;
-
-        return newRequest('https://api.tfl.gov.uk/StopPoint?stopTypes=NaptanPublicBusCoachTram'
-            + '%2CNaptanBusCoachStation&radius=' + searchRadius + '&useStopPointHierarchy'
-            + '=true&modes=bus&returnLines=true&lat=' + postcodeData.result.latitude
-            + '&lon=' + postcodeData.result.longitude + '&app_id=25b29ea5&'
-            + 'app_key=ff583ea695e335856a814aedcc475d9c');
-        })
-        .then(body => {
-            // Get stop ids for *numStops* closest stops
-            let stops = Array(JSON.parse(body));
-            let usedStops = [];
-
-            stops[0].stopPoints.sort((stop1, stop2) => {
-                return stop1.distance - stop2.distance
+        // Stop points to stops with bus lists
+        .then(buslessStops => {
+            const busStops = [];
+            buslessStops.forEach(stop => {
+                busStops.push(s2bus.getBuses(stop));
             });
-            stops[0].stopPoints.splice(numStops); // get rid of extra stops
-            stops[0].stopPoints.forEach(stop => {
-                usedStops.push( {
-                    code: stop.id,
-                    name: stop.commonName
-                });
-            });
-
-            // Get & print bus times
-            printNextBuses(usedStops);
+            return Promise.all(busStops)
         })
-        .catch((explanation) =>{
-            logger.fatal('Problem when requesting postcode information. Postcode: '
-                + postcode + '\nProgramme closing.');
-            console.log(explanation);
-            console.log('The programme will close.');
+
+        // Print buses
+        .then(stops => print.printBuses(stops))
+
+        // Handle rejected promise
+        .catch(err => {
+            console.log(err);
+            console.log('Programme closing.')
         });
-
 }
 
 function restartMain() {
@@ -167,9 +150,8 @@ function main(){
     console.log('Would you like to search by postcode or stop code?' +
         ' Enter "q" to quit.');
     let preference = readline.prompt().toLowerCase();
-    // let preference = 'postcode';
-    while (preference !== 'q') {
 
+    while (preference !== 'q') {
         // Ambiguous input?
         while (preference.indexOf('stop code') !== -1 && preference.indexOf('postcode') !== -1) {
             console.log('You have entered both "postcode" and "stop code". Please specify one or the other.');
@@ -198,13 +180,7 @@ function main(){
     console.log('Programme closing.');
 }
 
-
 // Programme
 logger.debug('Programme started.');
 
-// main();
-
-const prom = new Promise((resolve, reject) => {
-    resolve(4);
-});
-console.log(resolve.value);
+main();

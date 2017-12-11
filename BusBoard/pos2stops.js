@@ -1,13 +1,10 @@
-const request = require('request');
-const readline = require('readline-sync');
 const log4js = require('log4js');
 const logger = log4js.getLogger('index.js');
 const nr = require('./newRequest');
-
-const ord = ['First' , 'Second' , 'Third' , 'Fourth' , 'Fifth'];
-
+const classes = require('./classes');
 
 function getStops(pos) {
+    const numStops = 2;
     const searchRadius = 2000;
     const stopProm = nr.newReq('https://api.tfl.gov.uk/StopPoint?stopTypes=NaptanPublicBusCoachTram'
             + '%2CNaptanBusCoachStation&radius=' + searchRadius + '&useStopPointHierarchy'
@@ -25,17 +22,16 @@ function getStops(pos) {
             });
             stops[0].stopPoints.splice(numStops); // get rid of extra stops
             stops[0].stopPoints.forEach(stop => {
-                usedStops.push({
-                    code: stop.id,
-                    name: stop.commonName
-                });
+                usedStops.push(
+                    new classes.Stop(stop.commonName, stop.id, [])
+                );
             });
             return usedStops
         })
 
-        .catch(err => {
-            console.log('An error occurred when requesting information about ' +
-                'stops near the postcode from the internet.');
+        .catch(explanation => {
+            logger.fatal('Error in request postcode -> position.');
+            console.log(explanation);
         });
     return stopProm
 }

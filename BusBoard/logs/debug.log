@@ -1,389 +1,165 @@
-[2017-12-11T10:13:06.826] [DEBUG] index.js - Programme started.
-[2017-12-11T10:13:12.145] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T10:13:18.701] [ERROR] index.js - Bad request.
-[2017-12-11T10:19:19.042] [DEBUG] index.js - Programme started.
-[2017-12-11T10:19:20.972] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T10:19:24.699] [ERROR] index.js - Bad request.
-[2017-12-11T10:19:24.701] [FATAL] index.js - Problem when requesting postcode information. Postcode: se22 8hf
+[2017-12-11T16:03:32.715] [DEBUG] index.js - Programme started.
+[2017-12-11T16:03:32.721] [DEBUG] index.js - Searching by postcode.
+[2017-12-11T16:04:01.004] [DEBUG] index.js - Received data.
+[2017-12-11T16:04:01.009] [DEBUG] index.js - Received data.
+[2017-12-11T16:05:18.445] [DEBUG] index.js - Programme started.
+[2017-12-11T16:05:18.450] [DEBUG] index.js - Searching by postcode.
+[2017-12-11T16:05:18.525] [DEBUG] index.js - Received data.
+[2017-12-11T16:05:18.929] [DEBUG] index.js - Received data.
+[2017-12-11T16:05:18.947] [FATAL] index.js - Error in request postcode -> position.
+[2017-12-11T16:05:45.583] [DEBUG] index.js - Programme started.
+[2017-12-11T16:05:45.588] [DEBUG] index.js - Searching by postcode.
+[2017-12-11T16:05:45.666] [DEBUG] index.js - Received data.
+[2017-12-11T16:05:45.899] [DEBUG] index.js - Received data.
+[2017-12-11T16:05:45.914] [FATAL] index.js - Error in request postcode -> position.
+[2017-12-11T16:06:58.383] [FATAL] index.js - Problem when requesting postcode information. Postcode: se22 8hf
+[2017-12-11T16:07:00.298] [DEBUG] index.js - Programme started.
+[2017-12-11T16:07:00.304] [DEBUG] index.js - Searching by postcode.
+[2017-12-11T16:07:03.633] [DEBUG] index.js - Received data.
+[2017-12-11T16:10:05.661] [DEBUG] index.js - Programme started.
+[2017-12-11T16:10:05.673] [DEBUG] index.js - Searching by postcode.
+[2017-12-11T16:10:05.764] [DEBUG] index.js - Received data.
+[2017-12-11T16:10:27.884] [DEBUG] index.js - Programme started.
+[2017-12-11T16:10:27.889] [DEBUG] index.js - Searching by postcode.
+[2017-12-11T16:10:27.960] [DEBUG] index.js - Received data.
+[2017-12-11T16:10:28.059] [DEBUG] index.js - Received data.
+[2017-12-11T16:10:28.292] [ERROR] index.js - Bad request. Status code: 404
+[2017-12-11T16:10:28.294] [ERROR] index.js - Body: {"$type":"Tfl.Api.Presentation.Entities.ApiError, Tfl.Api.Presentation.Entities","timestampUtc":"2017-12-11T16:10:04.1865903Z","exceptionType":"EntityNotFoundException","httpStatusCode":404,"httpStatus":"NotFound","relativeUri":"/StopPoint/Whateley%20Road/Arrivals","message":"The following stop point is not recognised: Whateley Road"}
+[2017-12-11T16:10:28.434] [ERROR] index.js - Bad request. Status code: 404
+[2017-12-11T16:10:28.437] [ERROR] index.js - Body: {"$type":"Tfl.Api.Presentation.Entities.ApiError, Tfl.Api.Presentation.Entities","timestampUtc":"2017-12-11T16:10:04.161887Z","exceptionType":"EntityNotFoundException","httpStatusCode":404,"httpStatus":"NotFound","relativeUri":"/StopPoint/Whateley%20Road/Arrivals","message":"The following stop point is not recognised: Whateley Road"}
+[2017-12-11T16:10:28.589] [ERROR] index.js - Bad request. Status code: 404
+[2017-12-11T16:10:28.592] [ERROR] index.js - Body: {"$type":"Tfl.Api.Presentation.Entities.ApiError, Tfl.Api.Presentation.Entities","timestampUtc":"2017-12-11T16:10:04.512252Z","exceptionType":"EntityNotFoundException","httpStatusCode":404,"httpStatus":"NotFound","relativeUri":"/StopPoint/North%20Cross%20Road/Arrivals","message":"The following stop point is not recognised: North Cross Road"}
+[2017-12-11T16:10:28.597] [ERROR] index.js - Bad request. Status code: 404
+[2017-12-11T16:10:28.600] [ERROR] index.js - Body: {"$type":"Tfl.Api.Presentation.Entities.ApiError, Tfl.Api.Presentation.Entities","timestampUtc":"2017-12-11T16:10:04.4937297Z","exceptionType":"EntityNotFoundException","httpStatusCode":404,"httpStatus":"NotFound","relativeUri":"/StopPoint/Melbourne%20Grove/Arrivals","message":"The following stop point is not recognised: Melbourne Grove"}
+[2017-12-11T16:10:29.328] [ERROR] index.js - Bad request. Status code: 404
+[2017-12-11T16:10:29.331] [ERROR] index.js - Body: {"$type":"Tfl.Api.Presentation.Entities.ApiError, Tfl.Api.Presentation.Entities","timestampUtc":"2017-12-11T16:10:05.2671462Z","exceptionType":"EntityNotFoundException","httpStatusCode":404,"httpStatus":"NotFound","relativeUri":"/StopPoint/North%20Cross%20Road/Arrivals","message":"The following stop point is not recognised: North Cross Road"}
+[2017-12-11T16:13:05.071] [DEBUG] index.js - Programme started.
+[2017-12-11T16:13:05.076] [DEBUG] index.js - Searching by postcode.
+[2017-12-11T16:13:05.143] [DEBUG] index.js - Received data.
+[2017-12-11T16:13:05.242] [DEBUG] index.js - Received data.
+[2017-12-11T16:13:05.452] [DEBUG] index.js - Received data.
+[2017-12-11T16:13:05.842] [DEBUG] index.js - Received data.
+[2017-12-11T16:13:06.309] [DEBUG] index.js - Received data.
+[2017-12-11T16:13:07.269] [DEBUG] index.js - Received data.
+[2017-12-11T16:13:11.221] [DEBUG] index.js - Received data.
+[2017-12-11T16:13:54.431] [DEBUG] index.js - Programme started.
+[2017-12-11T16:13:54.437] [DEBUG] index.js - Searching by postcode.
+[2017-12-11T16:13:54.503] [DEBUG] index.js - Received data.
+[2017-12-11T16:13:54.598] [DEBUG] index.js - Received data.
+[2017-12-11T16:13:54.650] [DEBUG] index.js - Received data.
+[2017-12-11T16:13:54.653] [DEBUG] index.js - Received data.
+[2017-12-11T16:13:54.666] [DEBUG] index.js - Received data.
+[2017-12-11T16:13:54.702] [DEBUG] index.js - Received data.
+[2017-12-11T16:13:54.709] [DEBUG] index.js - Received data.
+[2017-12-11T16:16:28.432] [DEBUG] index.js - Programme started.
+[2017-12-11T16:16:28.437] [DEBUG] index.js - Searching by postcode.
+[2017-12-11T16:16:28.506] [DEBUG] index.js - Received data.
+[2017-12-11T16:16:28.625] [DEBUG] index.js - Received data.
+[2017-12-11T16:16:28.735] [DEBUG] index.js - Received data.
+[2017-12-11T16:16:28.768] [DEBUG] index.js - Received data.
+[2017-12-11T16:16:29.003] [DEBUG] index.js - Received data.
+[2017-12-11T16:16:29.731] [DEBUG] index.js - Received data.
+[2017-12-11T16:16:31.709] [DEBUG] index.js - Received data.
+[2017-12-11T16:17:45.248] [DEBUG] index.js - Programme started.
+[2017-12-11T16:17:45.254] [DEBUG] index.js - Searching by postcode.
+[2017-12-11T16:17:45.322] [DEBUG] index.js - Received data.
+[2017-12-11T16:17:45.436] [DEBUG] index.js - Received data.
+[2017-12-11T16:18:20.570] [DEBUG] index.js - Received data.
+[2017-12-11T16:21:21.640] [DEBUG] index.js - Received data.
+[2017-12-11T16:21:21.654] [DEBUG] index.js - Received data.
+[2017-12-11T16:21:21.657] [DEBUG] index.js - Received data.
+[2017-12-11T16:21:21.660] [DEBUG] index.js - Received data.
+[2017-12-11T16:21:25.188] [DEBUG] index.js - Programme started.
+[2017-12-11T16:21:25.194] [DEBUG] index.js - Searching by postcode.
+[2017-12-11T16:22:22.275] [DEBUG] index.js - Received data.
+[2017-12-11T16:22:22.421] [DEBUG] index.js - Received data.
+[2017-12-11T16:22:28.327] [DEBUG] index.js - Received data.
+[2017-12-11T16:22:33.597] [DEBUG] index.js - Received data.
+[2017-12-11T16:22:33.603] [DEBUG] index.js - Received data.
+[2017-12-11T16:22:33.607] [DEBUG] index.js - Received data.
+[2017-12-11T16:22:33.622] [DEBUG] index.js - Received data.
+[2017-12-11T16:23:54.366] [DEBUG] index.js - Programme started.
+[2017-12-11T16:23:54.371] [DEBUG] index.js - Searching by postcode.
+[2017-12-11T16:23:54.443] [DEBUG] index.js - Received data.
+[2017-12-11T16:23:54.535] [DEBUG] index.js - Received data.
+[2017-12-11T16:25:12.086] [DEBUG] index.js - Received data.
+[2017-12-11T16:25:12.097] [DEBUG] index.js - Received data.
+[2017-12-11T16:25:24.809] [DEBUG] index.js - Programme started.
+[2017-12-11T16:25:24.814] [DEBUG] index.js - Searching by postcode.
+[2017-12-11T16:25:25.289] [DEBUG] index.js - Received data.
+[2017-12-11T16:25:25.385] [DEBUG] index.js - Received data.
+[2017-12-11T16:25:35.869] [DEBUG] index.js - Received data.
+[2017-12-11T16:25:48.788] [DEBUG] index.js - Programme started.
+[2017-12-11T16:25:48.793] [DEBUG] index.js - Searching by postcode.
+[2017-12-11T16:25:48.862] [DEBUG] index.js - Received data.
+[2017-12-11T16:25:49.005] [DEBUG] index.js - Received data.
+[2017-12-11T16:27:14.113] [DEBUG] index.js - Received data.
+[2017-12-11T16:27:14.127] [DEBUG] index.js - Received data.
+[2017-12-11T16:27:14.172] [DEBUG] index.js - Received data.
+[2017-12-11T16:27:14.501] [DEBUG] index.js - Received data.
+[2017-12-11T16:27:14.572] [DEBUG] index.js - Received data.
+[2017-12-11T16:29:00.686] [DEBUG] index.js - Programme started.
+[2017-12-11T16:29:00.691] [DEBUG] index.js - Searching by postcode.
+[2017-12-11T16:29:08.054] [DEBUG] index.js - Received data.
+[2017-12-11T16:29:08.218] [DEBUG] index.js - Received data.
+[2017-12-11T16:29:08.292] [DEBUG] index.js - Received data.
+[2017-12-11T16:29:08.315] [DEBUG] index.js - Received data.
+[2017-12-11T16:29:46.529] [DEBUG] index.js - Received data.
+[2017-12-11T16:29:46.547] [DEBUG] index.js - Received data.
+[2017-12-11T16:29:46.549] [DEBUG] index.js - Received data.
+[2017-12-11T16:33:08.483] [DEBUG] index.js - Programme started.
+[2017-12-11T16:33:08.488] [DEBUG] index.js - Searching by postcode.
+[2017-12-11T16:33:08.556] [DEBUG] index.js - Received data.
+[2017-12-11T16:33:08.723] [DEBUG] index.js - Received data.
+[2017-12-11T16:33:08.809] [DEBUG] index.js - Received data.
+[2017-12-11T16:33:08.897] [DEBUG] index.js - Received data.
+[2017-12-11T16:33:08.917] [DEBUG] index.js - Received data.
+[2017-12-11T16:33:08.969] [DEBUG] index.js - Received data.
+[2017-12-11T16:33:09.048] [DEBUG] index.js - Received data.
+[2017-12-11T16:33:54.628] [DEBUG] index.js - Programme started.
+[2017-12-11T16:33:54.633] [DEBUG] index.js - Searching by postcode.
+[2017-12-11T16:33:54.715] [DEBUG] index.js - Received data.
+[2017-12-11T16:33:54.800] [DEBUG] index.js - Received data.
+[2017-12-11T16:33:54.858] [DEBUG] index.js - Received data.
+[2017-12-11T16:33:54.860] [FATAL] index.js - Problem when requesting bus stop information. Stop Code: 490006335W
 Programme closing.
-[2017-12-11T10:21:40.901] [DEBUG] index.js - Programme started.
-[2017-12-11T10:21:43.666] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T10:21:47.058] [ERROR] index.js - Bad request. Status code: 200
-[2017-12-11T10:21:47.059] [FATAL] index.js - Problem when requesting postcode information. Postcode: se22 8hf
+[2017-12-11T16:33:54.892] [DEBUG] index.js - Received data.
+[2017-12-11T16:33:54.960] [DEBUG] index.js - Received data.
+[2017-12-11T16:33:55.049] [DEBUG] index.js - Received data.
+[2017-12-11T16:33:55.050] [FATAL] index.js - Problem when requesting bus stop information. Stop Code: 490006335E
 Programme closing.
-[2017-12-11T10:22:37.835] [DEBUG] index.js - Programme started.
-[2017-12-11T10:22:43.213] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T10:22:48.087] [DEBUG] index.js - Received data.
-[2017-12-11T10:22:48.434] [ERROR] index.js - Bad request. Status code: 400
-[2017-12-11T10:22:48.436] [FATAL] index.js - Problem when requesting postcode information. Postcode: se22 8hf
+[2017-12-11T16:33:55.091] [DEBUG] index.js - Received data.
+[2017-12-11T16:38:35.530] [DEBUG] index.js - Programme started.
+[2017-12-11T16:38:54.474] [DEBUG] index.js - Programme started.
+[2017-12-11T16:39:26.500] [DEBUG] index.js - Programme started.
+[2017-12-11T16:39:26.506] [DEBUG] index.js - Searching by postcode.
+[2017-12-11T16:39:26.581] [DEBUG] index.js - Received data.
+[2017-12-11T16:39:26.716] [DEBUG] index.js - Received data.
+[2017-12-11T16:39:27.356] [DEBUG] index.js - Received data.
+[2017-12-11T16:40:24.180] [FATAL] index.js - Problem when requesting bus stop information. Stop Code: 490006335E
 Programme closing.
-[2017-12-11T10:23:45.018] [DEBUG] index.js - Programme started.
-[2017-12-11T10:23:49.265] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T10:23:59.100] [DEBUG] index.js - Received data.
-[2017-12-11T10:23:59.480] [ERROR] index.js - Bad request. Status code: 400
-[2017-12-11T10:23:59.481] [ERROR] index.js - Body: {"$type":"Tfl.Api.Presentation.Entities.ApiError, Tfl.Api.Presentation.Entities","timestampUtc":"2017-12-11T10:23:33.7456308Z","exceptionType":"ApiArgumentException","httpStatusCode":400,"httpStatus":"BadRequest","relativeUri":"/StopPoint?stopTypes=NaptanPublicBusCoachTram%2CNaptanBusCoachStation&radius=2000&useStopPointHierarchy=true&modes=bus&returnLines=true&lat=51.457&lon=-0.075?app_id=25b29ea5","message":"The value '-0.075?app_id=25b29ea5' is not valid for Lon. Longitude must be specified "}
-[2017-12-11T10:23:59.483] [FATAL] index.js - Problem when requesting postcode information. Postcode: se22 8hf
+[2017-12-11T16:40:24.185] [DEBUG] index.js - Received data.
+[2017-12-11T16:40:24.190] [DEBUG] index.js - Received data.
+[2017-12-11T16:40:24.209] [DEBUG] index.js - Received data.
+[2017-12-11T16:40:24.211] [DEBUG] index.js - Received data.
+[2017-12-11T16:40:24.213] [FATAL] index.js - Problem when requesting bus stop information. Stop Code: 490006335W
 Programme closing.
-[2017-12-11T10:26:02.082] [DEBUG] index.js - Programme started.
-[2017-12-11T10:26:05.550] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T10:26:08.961] [DEBUG] index.js - Received data.
-[2017-12-11T10:26:14.379] [DEBUG] index.js - Received data.
-[2017-12-11T10:26:14.393] [FATAL] index.js - Problem when requesting postcode information. Postcode: se22 8hf
-Programme closing.
-[2017-12-11T10:27:34.321] [DEBUG] index.js - Programme started.
-[2017-12-11T10:27:50.798] [DEBUG] index.js - Programme started.
-[2017-12-11T10:27:50.804] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T10:27:50.931] [DEBUG] index.js - Received data.
-[2017-12-11T10:27:55.391] [DEBUG] index.js - Received data.
-[2017-12-11T10:27:55.399] [FATAL] index.js - Problem when requesting postcode information. Postcode: se22 8hf
-Programme closing.
-[2017-12-11T10:28:08.075] [DEBUG] index.js - Programme started.
-[2017-12-11T10:28:08.081] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T10:28:15.193] [DEBUG] index.js - Received data.
-[2017-12-11T10:28:19.383] [DEBUG] index.js - Programme started.
-[2017-12-11T10:28:19.390] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T10:28:19.458] [DEBUG] index.js - Received data.
-[2017-12-11T10:28:19.557] [DEBUG] index.js - Received data.
-[2017-12-11T10:32:45.730] [DEBUG] index.js - Programme started.
-[2017-12-11T10:32:45.736] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T10:32:45.803] [DEBUG] index.js - Received data.
-[2017-12-11T10:32:45.938] [DEBUG] index.js - Received data.
-[2017-12-11T10:32:45.954] [FATAL] index.js - Problem when requesting postcode information. Postcode: se22 8hf
-Programme closing.
-[2017-12-11T10:33:06.224] [FATAL] index.js - Problem when requesting postcode information. Postcode: se22 8hf
-Programme closing.
-[2017-12-11T10:33:09.751] [DEBUG] index.js - Programme started.
-[2017-12-11T10:33:09.757] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T10:33:09.829] [DEBUG] index.js - Received data.
-[2017-12-11T10:33:17.591] [DEBUG] index.js - Received data.
-[2017-12-11T10:35:04.261] [FATAL] index.js - Problem when requesting postcode information. Postcode: se22 8hf
-Programme closing.
-[2017-12-11T10:35:54.598] [DEBUG] index.js - Programme started.
-[2017-12-11T10:35:54.604] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T10:35:54.670] [DEBUG] index.js - Received data.
-[2017-12-11T10:35:54.803] [DEBUG] index.js - Received data.
-[2017-12-11T10:35:54.812] [FATAL] index.js - Problem when requesting postcode information. Postcode: se22 8hf
-Programme closing.
-[2017-12-11T10:36:06.782] [DEBUG] index.js - Programme started.
-[2017-12-11T10:36:06.788] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T10:36:06.858] [DEBUG] index.js - Received data.
-[2017-12-11T10:36:06.958] [DEBUG] index.js - Received data.
-[2017-12-11T10:37:45.030] [FATAL] index.js - Problem when requesting postcode information. Postcode: se22 8hf
-Programme closing.
-[2017-12-11T10:38:04.605] [DEBUG] index.js - Programme started.
-[2017-12-11T10:38:04.610] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T10:38:04.678] [DEBUG] index.js - Received data.
-[2017-12-11T10:38:04.829] [DEBUG] index.js - Received data.
-[2017-12-11T10:38:05.005] [DEBUG] index.js - Received data.
-[2017-12-11T10:38:05.007] [DEBUG] index.js - Printed first bus.
-[2017-12-11T10:38:05.009] [DEBUG] index.js - Printed second bus.
-[2017-12-11T10:38:05.010] [DEBUG] index.js - Printed third bus.
-[2017-12-11T10:38:05.012] [DEBUG] index.js - Printed fourth bus.
-[2017-12-11T10:38:05.014] [DEBUG] index.js - Printed fifth bus.
-[2017-12-11T10:38:20.140] [DEBUG] index.js - Received data.
-[2017-12-11T10:38:20.141] [DEBUG] index.js - Printed first bus.
-[2017-12-11T10:38:20.143] [DEBUG] index.js - Printed second bus.
-[2017-12-11T10:38:20.148] [DEBUG] index.js - Printed third bus.
-[2017-12-11T10:38:20.150] [DEBUG] index.js - Printed fourth bus.
-[2017-12-11T10:38:20.151] [DEBUG] index.js - Printed fifth bus.
-[2017-12-11T10:49:41.454] [DEBUG] index.js - Programme started.
-[2017-12-11T10:49:41.460] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T10:49:58.509] [DEBUG] index.js - Received data.
-[2017-12-11T10:49:58.608] [DEBUG] index.js - Received data.
-[2017-12-11T10:49:58.773] [DEBUG] index.js - Received data.
-[2017-12-11T10:49:58.774] [DEBUG] index.js - Printed first bus.
-[2017-12-11T10:49:58.776] [DEBUG] index.js - Printed second bus.
-[2017-12-11T10:49:58.777] [DEBUG] index.js - Printed third bus.
-[2017-12-11T10:49:58.778] [DEBUG] index.js - Printed fourth bus.
-[2017-12-11T10:49:58.779] [DEBUG] index.js - Printed fifth bus.
-[2017-12-11T10:50:32.210] [DEBUG] index.js - Received data.
-[2017-12-11T10:50:32.212] [DEBUG] index.js - Printed first bus.
-[2017-12-11T10:50:32.213] [DEBUG] index.js - Printed second bus.
-[2017-12-11T10:50:32.214] [DEBUG] index.js - Printed third bus.
-[2017-12-11T10:50:32.216] [DEBUG] index.js - Printed fourth bus.
-[2017-12-11T10:50:32.217] [DEBUG] index.js - Printed fifth bus.
-[2017-12-11T10:55:26.475] [DEBUG] index.js - Programme started.
-[2017-12-11T10:55:26.481] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T10:55:26.548] [DEBUG] index.js - Received data.
-[2017-12-11T10:55:26.686] [DEBUG] index.js - Received data.
-[2017-12-11T10:55:26.835] [DEBUG] index.js - Received data.
-[2017-12-11T10:55:26.839] [DEBUG] index.js - Printed first bus.
-[2017-12-11T10:55:26.842] [DEBUG] index.js - Printed second bus.
-[2017-12-11T10:55:26.844] [DEBUG] index.js - Printed third bus.
-[2017-12-11T10:55:26.847] [DEBUG] index.js - Printed fourth bus.
-[2017-12-11T10:55:26.850] [DEBUG] index.js - Printed fifth bus.
-[2017-12-11T10:55:27.048] [DEBUG] index.js - Received data.
-[2017-12-11T10:55:27.050] [DEBUG] index.js - Printed first bus.
-[2017-12-11T10:55:27.052] [DEBUG] index.js - Printed second bus.
-[2017-12-11T10:55:27.054] [DEBUG] index.js - Printed third bus.
-[2017-12-11T10:55:27.055] [DEBUG] index.js - Printed fourth bus.
-[2017-12-11T10:55:27.057] [DEBUG] index.js - Printed fifth bus.
-[2017-12-11T10:55:58.037] [DEBUG] index.js - Programme started.
-[2017-12-11T10:55:58.042] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T10:55:58.109] [DEBUG] index.js - Received data.
-[2017-12-11T10:55:58.200] [DEBUG] index.js - Received data.
-[2017-12-11T10:55:58.258] [DEBUG] index.js - Received data.
-[2017-12-11T10:55:58.262] [DEBUG] index.js - Printed first bus.
-[2017-12-11T10:55:58.264] [DEBUG] index.js - Printed second bus.
-[2017-12-11T10:55:58.267] [DEBUG] index.js - Printed third bus.
-[2017-12-11T10:55:58.270] [DEBUG] index.js - Printed fourth bus.
-[2017-12-11T10:55:58.272] [DEBUG] index.js - Printed fifth bus.
-[2017-12-11T10:55:58.296] [DEBUG] index.js - Received data.
-[2017-12-11T10:55:58.299] [DEBUG] index.js - Printed first bus.
-[2017-12-11T10:55:58.302] [DEBUG] index.js - Printed second bus.
-[2017-12-11T10:55:58.304] [DEBUG] index.js - Printed third bus.
-[2017-12-11T10:55:58.307] [DEBUG] index.js - Printed fourth bus.
-[2017-12-11T10:55:58.309] [DEBUG] index.js - Printed fifth bus.
-[2017-12-11T11:03:00.810] [DEBUG] index.js - Programme started.
-[2017-12-11T11:03:00.817] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T11:03:00.904] [DEBUG] index.js - Received data.
-[2017-12-11T11:03:00.995] [DEBUG] index.js - Received data.
-[2017-12-11T11:03:01.115] [DEBUG] index.js - Received data.
-[2017-12-11T11:03:01.117] [DEBUG] index.js - Printed first bus.
-[2017-12-11T11:03:01.119] [DEBUG] index.js - Printed second bus.
-[2017-12-11T11:03:01.122] [DEBUG] index.js - Printed third bus.
-[2017-12-11T11:03:01.123] [DEBUG] index.js - Printed fourth bus.
-[2017-12-11T11:03:01.129] [DEBUG] index.js - Printed fifth bus.
-[2017-12-11T11:03:01.133] [DEBUG] index.js - Received data.
-[2017-12-11T11:03:01.135] [DEBUG] index.js - Printed first bus.
-[2017-12-11T11:03:01.137] [DEBUG] index.js - Printed second bus.
-[2017-12-11T11:03:01.139] [DEBUG] index.js - Printed third bus.
-[2017-12-11T11:03:01.141] [DEBUG] index.js - Printed fourth bus.
-[2017-12-11T11:03:01.142] [DEBUG] index.js - Printed fifth bus.
-[2017-12-11T11:03:01.145] [DEBUG] index.js - Received data.
-[2017-12-11T11:03:01.147] [DEBUG] index.js - Printed first bus.
-[2017-12-11T11:03:01.148] [DEBUG] index.js - Printed second bus.
-[2017-12-11T11:03:01.150] [DEBUG] index.js - Printed third bus.
-[2017-12-11T11:03:01.151] [DEBUG] index.js - Printed fourth bus.
-[2017-12-11T11:03:01.153] [DEBUG] index.js - Printed fifth bus.
-[2017-12-11T11:03:01.807] [DEBUG] index.js - Received data.
-[2017-12-11T11:03:01.809] [DEBUG] index.js - Printed first bus.
-[2017-12-11T11:03:01.811] [DEBUG] index.js - Printed second bus.
-[2017-12-11T11:03:01.813] [DEBUG] index.js - Printed third bus.
-[2017-12-11T11:03:01.816] [DEBUG] index.js - Printed fourth bus.
-[2017-12-11T11:03:01.818] [DEBUG] index.js - Printed fifth bus.
-[2017-12-11T11:03:31.083] [DEBUG] index.js - Programme started.
-[2017-12-11T11:03:31.089] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T11:03:31.165] [DEBUG] index.js - Received data.
-[2017-12-11T11:03:31.316] [DEBUG] index.js - Received data.
-[2017-12-11T11:03:31.366] [DEBUG] index.js - Received data.
-[2017-12-11T11:03:31.369] [DEBUG] index.js - Printed first bus.
-[2017-12-11T11:03:31.370] [DEBUG] index.js - Printed second bus.
-[2017-12-11T11:03:31.371] [DEBUG] index.js - Printed third bus.
-[2017-12-11T11:03:31.373] [DEBUG] index.js - Printed fourth bus.
-[2017-12-11T11:03:31.379] [DEBUG] index.js - Printed fifth bus.
-[2017-12-11T11:03:31.388] [DEBUG] index.js - Received data.
-[2017-12-11T11:03:31.390] [DEBUG] index.js - Printed first bus.
-[2017-12-11T11:03:31.392] [DEBUG] index.js - Printed second bus.
-[2017-12-11T11:03:31.393] [DEBUG] index.js - Printed third bus.
-[2017-12-11T11:03:31.396] [DEBUG] index.js - Printed fourth bus.
-[2017-12-11T11:03:31.398] [DEBUG] index.js - Printed fifth bus.
-[2017-12-11T11:03:31.400] [DEBUG] index.js - Received data.
-[2017-12-11T11:03:31.402] [DEBUG] index.js - Printed first bus.
-[2017-12-11T11:03:31.404] [DEBUG] index.js - Printed second bus.
-[2017-12-11T11:03:31.405] [DEBUG] index.js - Printed third bus.
-[2017-12-11T11:03:31.408] [DEBUG] index.js - Printed fourth bus.
-[2017-12-11T11:03:31.410] [DEBUG] index.js - Printed fifth bus.
-[2017-12-11T11:03:31.413] [DEBUG] index.js - Received data.
-[2017-12-11T11:03:31.417] [DEBUG] index.js - Printed first bus.
-[2017-12-11T11:03:31.420] [DEBUG] index.js - Printed second bus.
-[2017-12-11T11:03:31.421] [DEBUG] index.js - Printed third bus.
-[2017-12-11T11:03:31.423] [DEBUG] index.js - Printed fourth bus.
-[2017-12-11T11:03:31.425] [DEBUG] index.js - Printed fifth bus.
-[2017-12-11T11:03:41.465] [DEBUG] index.js - Programme started.
-[2017-12-11T11:03:41.471] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T11:03:41.539] [DEBUG] index.js - Received data.
-[2017-12-11T11:03:41.628] [DEBUG] index.js - Received data.
-[2017-12-11T11:03:41.669] [DEBUG] index.js - Received data.
-[2017-12-11T11:03:41.671] [DEBUG] index.js - Printed first bus.
-[2017-12-11T11:03:41.672] [DEBUG] index.js - Printed second bus.
-[2017-12-11T11:03:41.674] [DEBUG] index.js - Printed third bus.
-[2017-12-11T11:03:41.676] [DEBUG] index.js - Printed fourth bus.
-[2017-12-11T11:03:41.678] [DEBUG] index.js - Printed fifth bus.
-[2017-12-11T11:03:41.705] [DEBUG] index.js - Received data.
-[2017-12-11T11:03:41.708] [DEBUG] index.js - Printed first bus.
-[2017-12-11T11:03:41.710] [DEBUG] index.js - Printed second bus.
-[2017-12-11T11:03:41.711] [DEBUG] index.js - Printed third bus.
-[2017-12-11T11:03:41.714] [DEBUG] index.js - Printed fourth bus.
-[2017-12-11T11:03:41.715] [DEBUG] index.js - Printed fifth bus.
-[2017-12-11T11:03:41.718] [DEBUG] index.js - Received data.
-[2017-12-11T11:03:41.719] [DEBUG] index.js - Printed first bus.
-[2017-12-11T11:03:41.720] [DEBUG] index.js - Printed second bus.
-[2017-12-11T11:03:41.722] [DEBUG] index.js - Printed third bus.
-[2017-12-11T11:03:41.724] [DEBUG] index.js - Printed fourth bus.
-[2017-12-11T11:03:41.727] [DEBUG] index.js - Printed fifth bus.
-[2017-12-11T11:03:41.735] [DEBUG] index.js - Received data.
-[2017-12-11T11:03:41.737] [DEBUG] index.js - Printed first bus.
-[2017-12-11T11:03:41.739] [DEBUG] index.js - Printed second bus.
-[2017-12-11T11:03:41.741] [DEBUG] index.js - Printed third bus.
-[2017-12-11T11:03:41.743] [DEBUG] index.js - Printed fourth bus.
-[2017-12-11T11:03:41.745] [DEBUG] index.js - Printed fifth bus.
-[2017-12-11T11:04:03.662] [DEBUG] index.js - Programme started.
-[2017-12-11T11:04:03.668] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T11:04:03.740] [DEBUG] index.js - Received data.
-[2017-12-11T11:04:03.851] [DEBUG] index.js - Received data.
-[2017-12-11T11:04:03.899] [DEBUG] index.js - Received data.
-[2017-12-11T11:04:03.901] [DEBUG] index.js - Printed first bus.
-[2017-12-11T11:04:03.903] [DEBUG] index.js - Printed second bus.
-[2017-12-11T11:04:03.904] [DEBUG] index.js - Printed third bus.
-[2017-12-11T11:04:03.905] [DEBUG] index.js - Printed fourth bus.
-[2017-12-11T11:04:03.907] [DEBUG] index.js - Printed fifth bus.
-[2017-12-11T11:04:04.760] [DEBUG] index.js - Received data.
-[2017-12-11T11:04:04.765] [DEBUG] index.js - Printed first bus.
-[2017-12-11T11:04:04.768] [DEBUG] index.js - Printed second bus.
-[2017-12-11T11:04:04.771] [DEBUG] index.js - Printed third bus.
-[2017-12-11T11:04:04.775] [DEBUG] index.js - Printed fourth bus.
-[2017-12-11T11:04:04.777] [DEBUG] index.js - Printed fifth bus.
-[2017-12-11T11:05:04.751] [DEBUG] index.js - Programme started.
-[2017-12-11T11:05:04.757] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T11:05:04.832] [DEBUG] index.js - Received data.
-[2017-12-11T11:05:05.011] [DEBUG] index.js - Received data.
-[2017-12-11T11:06:54.602] [DEBUG] index.js - Received data.
-[2017-12-11T11:06:54.604] [DEBUG] index.js - Printed first bus.
-[2017-12-11T11:06:54.607] [DEBUG] index.js - Printed second bus.
-[2017-12-11T11:09:49.502] [DEBUG] index.js - Programme started.
-[2017-12-11T11:09:49.508] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T11:09:49.581] [DEBUG] index.js - Received data.
-[2017-12-11T11:09:49.698] [DEBUG] index.js - Received data.
-[2017-12-11T11:09:49.756] [DEBUG] index.js - Received data.
-[2017-12-11T11:09:49.759] [DEBUG] index.js - Printed first bus.
-[2017-12-11T11:09:49.761] [DEBUG] index.js - Printed second bus.
-[2017-12-11T11:09:49.763] [DEBUG] index.js - Printed third bus.
-[2017-12-11T11:09:49.765] [DEBUG] index.js - Printed fourth bus.
-[2017-12-11T11:09:49.767] [DEBUG] index.js - Printed fifth bus.
-[2017-12-11T11:09:49.769] [DEBUG] index.js - Received data.
-[2017-12-11T11:09:49.771] [DEBUG] index.js - Printed first bus.
-[2017-12-11T11:09:49.772] [DEBUG] index.js - Printed second bus.
-[2017-12-11T11:09:49.774] [DEBUG] index.js - Printed third bus.
-[2017-12-11T11:09:49.776] [DEBUG] index.js - Printed fourth bus.
-[2017-12-11T11:09:49.778] [DEBUG] index.js - Printed fifth bus.
-[2017-12-11T11:12:06.719] [DEBUG] index.js - Programme started.
-[2017-12-11T11:12:06.726] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T11:12:17.956] [DEBUG] index.js - Received data.
-[2017-12-11T11:12:18.126] [DEBUG] index.js - Received data.
-[2017-12-11T11:12:18.202] [DEBUG] index.js - Received data.
-[2017-12-11T11:12:18.205] [DEBUG] index.js - Printed first bus.
-[2017-12-11T11:12:18.207] [DEBUG] index.js - Printed second bus.
-[2017-12-11T11:12:18.209] [DEBUG] index.js - Printed third bus.
-[2017-12-11T11:12:18.210] [DEBUG] index.js - Printed fourth bus.
-[2017-12-11T11:12:18.212] [DEBUG] index.js - Printed fifth bus.
-[2017-12-11T11:12:18.584] [DEBUG] index.js - Received data.
-[2017-12-11T11:12:18.587] [DEBUG] index.js - Printed first bus.
-[2017-12-11T11:12:18.589] [DEBUG] index.js - Printed second bus.
-[2017-12-11T11:12:18.591] [DEBUG] index.js - Printed third bus.
-[2017-12-11T11:12:18.592] [DEBUG] index.js - Printed fourth bus.
-[2017-12-11T11:12:18.597] [DEBUG] index.js - Printed fifth bus.
-[2017-12-11T11:16:13.923] [DEBUG] index.js - Programme started.
-[2017-12-11T11:16:13.928] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T11:16:14.000] [DEBUG] index.js - Received data.
-[2017-12-11T11:16:14.100] [DEBUG] index.js - Received data.
-[2017-12-11T11:16:14.207] [DEBUG] index.js - Received data.
-[2017-12-11T11:16:14.212] [DEBUG] index.js - Printed first bus.
-[2017-12-11T11:16:14.215] [DEBUG] index.js - Printed second bus.
-[2017-12-11T11:16:14.218] [DEBUG] index.js - Printed third bus.
-[2017-12-11T11:16:14.221] [DEBUG] index.js - Printed fourth bus.
-[2017-12-11T11:16:14.224] [DEBUG] index.js - Printed fifth bus.
-[2017-12-11T11:16:16.484] [DEBUG] index.js - Received data.
-[2017-12-11T11:16:16.487] [DEBUG] index.js - Printed first bus.
-[2017-12-11T11:16:16.489] [DEBUG] index.js - Printed second bus.
-[2017-12-11T11:16:16.491] [DEBUG] index.js - Printed third bus.
-[2017-12-11T11:16:16.493] [DEBUG] index.js - Printed fourth bus.
-[2017-12-11T11:16:16.500] [DEBUG] index.js - Printed fifth bus.
-[2017-12-11T11:17:12.029] [DEBUG] index.js - Programme started.
-[2017-12-11T11:17:19.700] [DEBUG] index.js - Unsuitable command. Asking again.
-[2017-12-11T11:17:23.143] [DEBUG] index.js - Searching by stop code.
-[2017-12-11T11:18:08.579] [DEBUG] index.js - Programme terminating.
-[2017-12-11T11:18:13.857] [DEBUG] index.js - Programme started.
-[2017-12-11T11:18:15.286] [DEBUG] index.js - Searching by stop code.
-[2017-12-11T11:18:55.354] [DEBUG] index.js - Received stop code: 490008660N
-[2017-12-11T11:20:33.551] [DEBUG] index.js - Programme started.
-[2017-12-11T11:20:37.282] [DEBUG] index.js - Searching by stop code.
-[2017-12-11T11:20:47.364] [DEBUG] index.js - Received stop code: 490008660N
-[2017-12-11T11:20:50.270] [DEBUG] index.js - Received data.
-[2017-12-11T11:20:50.274] [DEBUG] index.js - Printed first bus.
-[2017-12-11T11:20:50.277] [DEBUG] index.js - Printed second bus.
-[2017-12-11T11:20:50.279] [DEBUG] index.js - Printed third bus.
-[2017-12-11T11:20:50.281] [DEBUG] index.js - Printed fourth bus.
-[2017-12-11T11:20:50.284] [DEBUG] index.js - Printed fifth bus.
-[2017-12-11T11:30:39.487] [DEBUG] index.js - Programme started.
-[2017-12-11T11:32:48.511] [DEBUG] index.js - Programme started.
-[2017-12-11T11:33:31.836] [DEBUG] index.js - Programme started.
-[2017-12-11T11:33:34.228] [DEBUG] index.js - Searching by stop code.
-[2017-12-11T11:33:50.163] [DEBUG] index.js - Received stop code: 490008660N
-[2017-12-11T11:33:52.184] [DEBUG] index.js - Received data.
-[2017-12-11T11:33:52.187] [DEBUG] index.js - Printed first bus.
-[2017-12-11T11:33:52.189] [DEBUG] index.js - Printed second bus.
-[2017-12-11T11:33:52.191] [DEBUG] index.js - Printed third bus.
-[2017-12-11T11:33:52.192] [DEBUG] index.js - Printed fourth bus.
-[2017-12-11T11:33:52.194] [DEBUG] index.js - Printed fifth bus.
-[2017-12-11T11:33:55.393] [DEBUG] index.js - Programme started.
-[2017-12-11T11:33:57.569] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T11:34:05.565] [ERROR] index.js - Bad request. Status code: 404
-[2017-12-11T11:34:05.567] [ERROR] index.js - Body: {"status":404,"error":"Postcode not found"}
-[2017-12-11T11:34:05.569] [FATAL] index.js - Problem when requesting postcode information. Postcode: sw6 3ij
-Programme closing.
-[2017-12-11T11:34:09.499] [DEBUG] index.js - Programme started.
-[2017-12-11T11:34:12.171] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T11:34:16.731] [DEBUG] index.js - Received data.
-[2017-12-11T11:34:16.923] [DEBUG] index.js - Received data.
-[2017-12-11T11:34:17.016] [DEBUG] index.js - Received data.
-[2017-12-11T11:34:17.019] [DEBUG] index.js - Printed first bus.
-[2017-12-11T11:34:17.021] [DEBUG] index.js - Printed second bus.
-[2017-12-11T11:34:17.022] [DEBUG] index.js - Printed third bus.
-[2017-12-11T11:34:17.024] [DEBUG] index.js - Printed fourth bus.
-[2017-12-11T11:34:17.026] [DEBUG] index.js - Printed fifth bus.
-[2017-12-11T11:34:17.047] [DEBUG] index.js - Received data.
-[2017-12-11T11:34:17.050] [DEBUG] index.js - Printed first bus.
-[2017-12-11T11:34:17.051] [DEBUG] index.js - Printed second bus.
-[2017-12-11T11:34:17.053] [DEBUG] index.js - Printed third bus.
-[2017-12-11T11:34:17.060] [DEBUG] index.js - Printed fourth bus.
-[2017-12-11T11:34:17.061] [DEBUG] index.js - Printed fifth bus.
-[2017-12-11T11:35:01.311] [DEBUG] index.js - Programme started.
-[2017-12-11T11:35:03.158] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T11:35:06.787] [DEBUG] index.js - Received data.
-[2017-12-11T11:35:07.008] [DEBUG] index.js - Received data.
-[2017-12-11T11:35:07.132] [DEBUG] index.js - Received data.
-[2017-12-11T11:35:07.136] [DEBUG] index.js - Printed first bus.
-[2017-12-11T11:35:07.138] [DEBUG] index.js - Printed second bus.
-[2017-12-11T11:35:07.140] [DEBUG] index.js - Printed third bus.
-[2017-12-11T11:35:07.142] [DEBUG] index.js - Printed fourth bus.
-[2017-12-11T11:35:07.145] [DEBUG] index.js - Printed fifth bus.
-[2017-12-11T11:35:08.462] [DEBUG] index.js - Received data.
-[2017-12-11T11:35:08.464] [DEBUG] index.js - Printed first bus.
-[2017-12-11T11:35:08.466] [DEBUG] index.js - Printed second bus.
-[2017-12-11T11:35:08.467] [DEBUG] index.js - Printed third bus.
-[2017-12-11T11:35:08.473] [DEBUG] index.js - Printed fourth bus.
-[2017-12-11T11:35:08.475] [DEBUG] index.js - Printed fifth bus.
-[2017-12-11T11:37:26.467] [DEBUG] index.js - Programme started.
-[2017-12-11T11:37:28.550] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T11:37:31.639] [DEBUG] index.js - Received data.
-[2017-12-11T11:37:31.804] [DEBUG] index.js - Received data.
-[2017-12-11T11:37:31.875] [DEBUG] index.js - Received data.
-[2017-12-11T11:37:31.877] [DEBUG] index.js - Printed first bus.
-[2017-12-11T11:37:31.879] [DEBUG] index.js - Printed second bus.
-[2017-12-11T11:37:31.881] [DEBUG] index.js - Printed third bus.
-[2017-12-11T11:37:31.882] [DEBUG] index.js - Printed fourth bus.
-[2017-12-11T11:37:31.884] [DEBUG] index.js - Printed fifth bus.
-[2017-12-11T11:37:31.998] [DEBUG] index.js - Received data.
-[2017-12-11T11:37:32.001] [DEBUG] index.js - Printed first bus.
-[2017-12-11T11:37:32.003] [DEBUG] index.js - Printed second bus.
-[2017-12-11T11:37:32.004] [DEBUG] index.js - Printed third bus.
-[2017-12-11T11:37:32.006] [DEBUG] index.js - Printed fourth bus.
-[2017-12-11T11:37:32.007] [DEBUG] index.js - Printed fifth bus.
-[2017-12-11T11:37:42.119] [DEBUG] index.js - Programme started.
-[2017-12-11T11:37:44.409] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T11:37:46.664] [DEBUG] index.js - Received data.
-[2017-12-11T11:37:46.780] [DEBUG] index.js - Received data.
-[2017-12-11T11:37:46.845] [DEBUG] index.js - Received data.
-[2017-12-11T11:37:46.847] [DEBUG] index.js - Printed first bus.
-[2017-12-11T11:37:46.849] [DEBUG] index.js - Printed second bus.
-[2017-12-11T11:37:46.851] [DEBUG] index.js - Printed third bus.
-[2017-12-11T11:37:46.852] [DEBUG] index.js - Printed fourth bus.
-[2017-12-11T11:37:46.854] [DEBUG] index.js - Printed fifth bus.
-[2017-12-11T11:37:46.922] [DEBUG] index.js - Received data.
-[2017-12-11T11:37:46.924] [DEBUG] index.js - Printed first bus.
-[2017-12-11T11:37:46.925] [DEBUG] index.js - Printed second bus.
-[2017-12-11T11:37:46.927] [DEBUG] index.js - Printed third bus.
-[2017-12-11T11:37:46.929] [DEBUG] index.js - Printed fourth bus.
-[2017-12-11T11:37:46.931] [DEBUG] index.js - Printed fifth bus.
-[2017-12-11T12:38:58.057] [DEBUG] index.js - Programme started.
+[2017-12-11T16:40:30.388] [DEBUG] index.js - Programme started.
+[2017-12-11T16:40:30.395] [DEBUG] index.js - Searching by postcode.
+[2017-12-11T16:40:30.472] [DEBUG] index.js - Received data.
+[2017-12-11T16:40:31.830] [DEBUG] index.js - Received data.
+[2017-12-11T16:40:31.948] [DEBUG] index.js - Received data.
+[2017-12-11T16:40:32.549] [DEBUG] index.js - Received data.
+[2017-12-11T16:40:32.797] [DEBUG] index.js - Received data.
+[2017-12-11T16:40:33.073] [DEBUG] index.js - Received data.
+[2017-12-11T16:40:34.491] [DEBUG] index.js - Received data.
+[2017-12-11T16:41:25.478] [DEBUG] index.js - Programme started.
+[2017-12-11T16:41:25.483] [DEBUG] index.js - Searching by postcode.
+[2017-12-11T16:41:25.548] [DEBUG] index.js - Received data.
+[2017-12-11T16:41:25.644] [DEBUG] index.js - Received data.
+[2017-12-11T16:41:25.699] [DEBUG] index.js - Received data.
+[2017-12-11T16:41:25.724] [DEBUG] index.js - Received data.
+[2017-12-11T16:44:30.185] [DEBUG] index.js - Programme started.
+[2017-12-11T16:44:31.984] [DEBUG] index.js - Searching by stop code.
+[2017-12-11T16:44:49.318] [DEBUG] index.js - Received stop code: 490008660N
+[2017-12-11T16:44:51.178] [DEBUG] index.js - Received data.
