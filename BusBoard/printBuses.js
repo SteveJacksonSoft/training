@@ -7,7 +7,7 @@ function printBuses(stops) {
         }
         stop.buses.forEach((bus, busNum) => {
             console.log('The ' + ord[busNum].toLowerCase() + ' bus at ' + stop.name + ' will be the '
-                + bus.number + ' to ' + bus.destination);
+                + bus.number + ' to ' + bus.destination + ', arriving at ' + bus.arrivalTime);
         });
     });
 }
