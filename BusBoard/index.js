@@ -44,16 +44,16 @@ function searchByPostcode() {
     logger.debug('Searching by postcode.');
     console.log('Please enter a postcode.');
     const postcode = readline.prompt();
-
+    // const postcode = 'aopifdn';
     // Find Lat and Long
     const numStops = 2; // Number of stops to display
     let postcodeProm = new Promise((resolve,reject) => resolve(postcode));
 
         //PC to Position
-    postcodeProm.then(postcode => pc2pos.getLatLon(postcode))
+    const checkProm = postcodeProm.then(postcode => pc2pos.getLatLon(postcode));
 
         // Position to stop points
-        .then(pos => pos2stops.getStops(pos))
+    checkProm.then(pos => pos2stops.getStops(pos))
 
         // Stop points to stops with bus lists
         .then(buslessStops => {
@@ -67,6 +67,10 @@ function searchByPostcode() {
         // Print buses
         .then(stops => print.printBuses(stops))
 
+        // Restart command if desired
+        .then(() => {
+            restartCommand();
+        })
         // Handle rejected promise
         .catch(err => {
             console.log(err);
@@ -75,11 +79,11 @@ function searchByPostcode() {
 }
 
 function restartCommand() {
-    console.log('Would you like to make a new search? Enter q to quit.');
+    console.log('\nWould you like to make a new search? Enter q to quit.');
     let answer = readline.prompt().toLowerCase();
 
     if (answer !== 'q' && answer !== 'no' && answer !== 'no.') {
-        main();
+        command();
     }
 }
 
@@ -87,6 +91,7 @@ function command(){
     console.log('Would you like to search by postcode or stop code?' +
         ' Enter "q" to quit.');
     let preference = readline.prompt().toLowerCase();
+    // let preference = 'postcode';
 
     while (preference !== 'q') {
         // Ambiguous input?

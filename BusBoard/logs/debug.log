@@ -1,0 +1,67 @@
+[2017-12-11T17:22:52.878] [DEBUG] index.js - Programme started.
+[2017-12-11T17:22:55.396] [DEBUG] index.js - Searching by postcode.
+[2017-12-11T17:22:56.765] [ERROR] index.js - Bad request. Status code: 404
+[2017-12-11T17:22:56.767] [ERROR] index.js - Body: {"status":404,"error":"Invalid postcode"}
+[2017-12-11T17:22:56.768] [FATAL] index.js - Problem when requesting postcode information. Postcode: fqewori
+[2017-12-11T17:25:28.577] [DEBUG] index.js - Programme started.
+[2017-12-11T17:25:28.593] [DEBUG] index.js - Searching by postcode.
+[2017-12-11T17:27:32.174] [ERROR] index.js - Bad request. Status code: 404
+[2017-12-11T17:27:32.176] [ERROR] index.js - Body: {"status":404,"error":"Invalid postcode"}
+[2017-12-11T17:27:32.179] [FATAL] index.js - Problem when requesting postcode information. Postcode: aopifdn
+[2017-12-11T17:27:32.975] [DEBUG] index.js - Programme started.
+[2017-12-11T17:27:32.980] [DEBUG] index.js - Searching by postcode.
+[2017-12-11T17:27:33.039] [ERROR] index.js - Bad request. Status code: 404
+[2017-12-11T17:27:33.041] [ERROR] index.js - Body: {"status":404,"error":"Invalid postcode"}
+[2017-12-11T17:27:33.042] [FATAL] index.js - Problem when requesting postcode information. Postcode: aopifdn
+[2017-12-11T17:27:45.364] [DEBUG] index.js - Programme started.
+[2017-12-11T17:27:45.379] [DEBUG] index.js - Searching by postcode.
+[2017-12-11T17:27:49.240] [ERROR] index.js - Bad request. Status code: 404
+[2017-12-11T17:27:49.253] [ERROR] index.js - Body: {"status":404,"error":"Invalid postcode"}
+[2017-12-11T17:27:49.269] [FATAL] index.js - Problem when requesting postcode information. Postcode: aopifdn
+[2017-12-11T17:30:32.745] [DEBUG] index.js - Programme started.
+[2017-12-11T17:30:32.760] [DEBUG] index.js - Searching by postcode.
+[2017-12-11T17:30:43.675] [ERROR] index.js - Bad request. Status code: 404
+[2017-12-11T17:30:43.676] [ERROR] index.js - Body: {"status":404,"error":"Invalid postcode"}
+[2017-12-11T17:30:43.678] [FATAL] index.js - Problem when requesting postcode information. Postcode: aopifdn
+[2017-12-11T17:30:52.439] [DEBUG] index.js - Programme started.
+[2017-12-11T17:30:52.445] [DEBUG] index.js - Searching by postcode.
+[2017-12-11T17:32:01.257] [ERROR] index.js - Bad request. Status code: 404
+[2017-12-11T17:32:01.258] [ERROR] index.js - Body: {"status":404,"error":"Invalid postcode"}
+[2017-12-11T17:32:01.260] [FATAL] index.js - Problem when requesting postcode information. Postcode: aopifdn
+[2017-12-11T17:32:07.647] [DEBUG] index.js - Programme started.
+[2017-12-11T17:32:07.652] [DEBUG] index.js - Searching by postcode.
+[2017-12-11T17:33:12.849] [ERROR] index.js - Bad request. Status code: 404
+[2017-12-11T17:33:20.014] [ERROR] index.js - Body: {"status":404,"error":"Invalid postcode"}
+[2017-12-11T17:33:20.034] [FATAL] index.js - Problem when requesting postcode information. Postcode: aopifdn
+[2017-12-11T17:33:21.329] [DEBUG] index.js - Programme started.
+[2017-12-11T17:33:21.335] [DEBUG] index.js - Searching by postcode.
+[2017-12-11T17:33:26.287] [ERROR] index.js - Bad request. Status code: 404
+[2017-12-11T17:33:27.511] [ERROR] index.js - Body: {"status":404,"error":"Invalid postcode"}
+[2017-12-11T17:34:46.381] [FATAL] index.js - Problem when requesting postcode information. Postcode: aopifdn
+[2017-12-11T17:35:44.402] [DEBUG] index.js - Programme started.
+[2017-12-11T17:35:44.417] [DEBUG] index.js - Searching by postcode.
+[2017-12-11T17:35:56.013] [ERROR] index.js - Bad request. Status code: 404
+[2017-12-11T17:35:56.015] [ERROR] index.js - Body: {"status":404,"error":"Invalid postcode"}
+[2017-12-11T17:35:56.018] [FATAL] index.js - Problem when requesting postcode information. Postcode: aopifdn
+[2017-12-11T17:36:07.191] [DEBUG] index.js - Programme started.
+[2017-12-11T17:36:07.206] [DEBUG] index.js - Searching by postcode.
+[2017-12-11T17:37:12.294] [ERROR] index.js - Bad request. Status code: 404
+[2017-12-11T17:37:12.296] [ERROR] index.js - Body: {"status":404,"error":"Invalid postcode"}
+[2017-12-11T17:37:12.297] [FATAL] index.js - Problem when requesting postcode information. Postcode: aopifdn
+[2017-12-11T17:37:16.601] [DEBUG] index.js - Programme started.
+[2017-12-11T17:37:16.627] [DEBUG] index.js - Searching by postcode.
+[2017-12-11T17:38:17.352] [ERROR] index.js - Bad request. Status code: 404
+[2017-12-11T17:38:17.380] [ERROR] index.js - Body: {"status":404,"error":"Invalid postcode"}
+[2017-12-11T17:38:17.410] [FATAL] index.js - Problem when requesting postcode information. Postcode: aopifdn
+[2017-12-11T17:43:00.164] [DEBUG] index.js - Programme started.
+[2017-12-11T17:43:02.600] [DEBUG] index.js - Searching by postcode.
+[2017-12-11T17:43:07.333] [DEBUG] index.js - Received data.
+[2017-12-11T17:43:07.691] [DEBUG] index.js - Received data.
+[2017-12-11T17:43:07.768] [DEBUG] index.js - Received data.
+[2017-12-11T17:43:08.803] [DEBUG] index.js - Received data.
+[2017-12-11T17:43:28.128] [DEBUG] index.js - Programme started.
+[2017-12-11T17:43:30.285] [DEBUG] index.js - Searching by postcode.
+[2017-12-11T17:43:35.205] [DEBUG] index.js - Received data.
+[2017-12-11T17:43:35.341] [DEBUG] index.js - Received data.
+[2017-12-11T17:43:39.559] [DEBUG] index.js - Received data.
+[2017-12-11T17:43:39.579] [DEBUG] index.js - Received data.
