@@ -16,9 +16,6 @@ const pos2stops = require('./pos2stops');
 const s2bus = require('./stop2buses');
 const print = require('./printBuses');
 
-const ord = ['First' , 'Second' , 'Third' , 'Fourth' , 'Fifth'];
-
-
 function searchByStopCode() {
     logger.debug('Searching by stop code.');
 
