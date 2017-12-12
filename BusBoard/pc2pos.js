@@ -2,6 +2,7 @@ const log4js = require('log4js');
 const logger = log4js.getLogger('index.js');
 const nr = require('./newRequest');
 
+
 function getLatLon(postcode) {
 
      return nr.newReq('https://api.postcodes.io/postcodes/' + postcode)
@@ -13,11 +14,9 @@ function getLatLon(postcode) {
             return {lat: lat, lon: lon}
         })
 
-        .catch((explanation) =>{
+        .catch(() =>{
             logger.fatal('Problem when requesting postcode information. Postcode: '
                 + postcode /* + '\nProgramme closing.'*/);
-            console.log(explanation);
-            // console.log('The programme will close.');
         });
 }
 

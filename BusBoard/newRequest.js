@@ -19,7 +19,10 @@ function newRequest(URL) {
                 logger.error('Bad request. Status code: ' + response.statusCode);
                 logger.error('Body: ' + body);
                 console.log('An error has occurred.');
-                reject('An error occurred when requesting data from the Internet.');
+                reject({
+                    message: 'An error occurred when requesting data from the Internet.',
+                    statusCode: response.statusCode
+                });
             }
         });
     });

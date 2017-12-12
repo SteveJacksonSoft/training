@@ -1,67 +1,37 @@
-[2017-12-11T17:22:52.878] [DEBUG] index.js - Programme started.
-[2017-12-11T17:22:55.396] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T17:22:56.765] [ERROR] index.js - Bad request. Status code: 404
-[2017-12-11T17:22:56.767] [ERROR] index.js - Body: {"status":404,"error":"Invalid postcode"}
-[2017-12-11T17:22:56.768] [FATAL] index.js - Problem when requesting postcode information. Postcode: fqewori
-[2017-12-11T17:25:28.577] [DEBUG] index.js - Programme started.
-[2017-12-11T17:25:28.593] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T17:27:32.174] [ERROR] index.js - Bad request. Status code: 404
-[2017-12-11T17:27:32.176] [ERROR] index.js - Body: {"status":404,"error":"Invalid postcode"}
-[2017-12-11T17:27:32.179] [FATAL] index.js - Problem when requesting postcode information. Postcode: aopifdn
-[2017-12-11T17:27:32.975] [DEBUG] index.js - Programme started.
-[2017-12-11T17:27:32.980] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T17:27:33.039] [ERROR] index.js - Bad request. Status code: 404
-[2017-12-11T17:27:33.041] [ERROR] index.js - Body: {"status":404,"error":"Invalid postcode"}
-[2017-12-11T17:27:33.042] [FATAL] index.js - Problem when requesting postcode information. Postcode: aopifdn
-[2017-12-11T17:27:45.364] [DEBUG] index.js - Programme started.
-[2017-12-11T17:27:45.379] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T17:27:49.240] [ERROR] index.js - Bad request. Status code: 404
-[2017-12-11T17:27:49.253] [ERROR] index.js - Body: {"status":404,"error":"Invalid postcode"}
-[2017-12-11T17:27:49.269] [FATAL] index.js - Problem when requesting postcode information. Postcode: aopifdn
-[2017-12-11T17:30:32.745] [DEBUG] index.js - Programme started.
-[2017-12-11T17:30:32.760] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T17:30:43.675] [ERROR] index.js - Bad request. Status code: 404
-[2017-12-11T17:30:43.676] [ERROR] index.js - Body: {"status":404,"error":"Invalid postcode"}
-[2017-12-11T17:30:43.678] [FATAL] index.js - Problem when requesting postcode information. Postcode: aopifdn
-[2017-12-11T17:30:52.439] [DEBUG] index.js - Programme started.
-[2017-12-11T17:30:52.445] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T17:32:01.257] [ERROR] index.js - Bad request. Status code: 404
-[2017-12-11T17:32:01.258] [ERROR] index.js - Body: {"status":404,"error":"Invalid postcode"}
-[2017-12-11T17:32:01.260] [FATAL] index.js - Problem when requesting postcode information. Postcode: aopifdn
-[2017-12-11T17:32:07.647] [DEBUG] index.js - Programme started.
-[2017-12-11T17:32:07.652] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T17:33:12.849] [ERROR] index.js - Bad request. Status code: 404
-[2017-12-11T17:33:20.014] [ERROR] index.js - Body: {"status":404,"error":"Invalid postcode"}
-[2017-12-11T17:33:20.034] [FATAL] index.js - Problem when requesting postcode information. Postcode: aopifdn
-[2017-12-11T17:33:21.329] [DEBUG] index.js - Programme started.
-[2017-12-11T17:33:21.335] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T17:33:26.287] [ERROR] index.js - Bad request. Status code: 404
-[2017-12-11T17:33:27.511] [ERROR] index.js - Body: {"status":404,"error":"Invalid postcode"}
-[2017-12-11T17:34:46.381] [FATAL] index.js - Problem when requesting postcode information. Postcode: aopifdn
-[2017-12-11T17:35:44.402] [DEBUG] index.js - Programme started.
-[2017-12-11T17:35:44.417] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T17:35:56.013] [ERROR] index.js - Bad request. Status code: 404
-[2017-12-11T17:35:56.015] [ERROR] index.js - Body: {"status":404,"error":"Invalid postcode"}
-[2017-12-11T17:35:56.018] [FATAL] index.js - Problem when requesting postcode information. Postcode: aopifdn
-[2017-12-11T17:36:07.191] [DEBUG] index.js - Programme started.
-[2017-12-11T17:36:07.206] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T17:37:12.294] [ERROR] index.js - Bad request. Status code: 404
-[2017-12-11T17:37:12.296] [ERROR] index.js - Body: {"status":404,"error":"Invalid postcode"}
-[2017-12-11T17:37:12.297] [FATAL] index.js - Problem when requesting postcode information. Postcode: aopifdn
-[2017-12-11T17:37:16.601] [DEBUG] index.js - Programme started.
-[2017-12-11T17:37:16.627] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T17:38:17.352] [ERROR] index.js - Bad request. Status code: 404
-[2017-12-11T17:38:17.380] [ERROR] index.js - Body: {"status":404,"error":"Invalid postcode"}
-[2017-12-11T17:38:17.410] [FATAL] index.js - Problem when requesting postcode information. Postcode: aopifdn
-[2017-12-11T17:43:00.164] [DEBUG] index.js - Programme started.
-[2017-12-11T17:43:02.600] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T17:43:07.333] [DEBUG] index.js - Received data.
-[2017-12-11T17:43:07.691] [DEBUG] index.js - Received data.
-[2017-12-11T17:43:07.768] [DEBUG] index.js - Received data.
-[2017-12-11T17:43:08.803] [DEBUG] index.js - Received data.
-[2017-12-11T17:43:28.128] [DEBUG] index.js - Programme started.
-[2017-12-11T17:43:30.285] [DEBUG] index.js - Searching by postcode.
-[2017-12-11T17:43:35.205] [DEBUG] index.js - Received data.
-[2017-12-11T17:43:35.341] [DEBUG] index.js - Received data.
-[2017-12-11T17:43:39.559] [DEBUG] index.js - Received data.
-[2017-12-11T17:43:39.579] [DEBUG] index.js - Received data.
+[2017-12-12T10:34:11.159] [DEBUG] index.js - Searching by stop code.
+[2017-12-12T10:34:18.861] [DEBUG] index.js - Received stop code: asdofin
+[2017-12-12T10:34:18.918] [ERROR] index.js - Bad request. Status code: 404
+[2017-12-12T10:34:18.921] [ERROR] index.js - Body: {"$type":"Tfl.Api.Presentation.Entities.ApiError, Tfl.Api.Presentation.Entities","timestampUtc":"2017-12-12T10:33:55.4072094Z","exceptionType":"EntityNotFoundException","httpStatusCode":404,"httpStatus":"NotFound","relativeUri":"/StopPoint/asdofin/Arrivals","message":"The following stop point is not recognised: asdofin"}
+[2017-12-12T10:34:18.924] [FATAL] index.js - Problem when requesting bus stop information. Stop Code: asdofin
+[2017-12-12T10:38:07.968] [DEBUG] index.js - Searching by stop code.
+[2017-12-12T10:38:10.883] [DEBUG] index.js - Received stop code: aosidnf
+[2017-12-12T10:38:10.997] [ERROR] index.js - Bad request. Status code: 404
+[2017-12-12T10:38:11.000] [ERROR] index.js - Body: {"$type":"Tfl.Api.Presentation.Entities.ApiError, Tfl.Api.Presentation.Entities","timestampUtc":"2017-12-12T10:37:47.4750424Z","exceptionType":"EntityNotFoundException","httpStatusCode":404,"httpStatus":"NotFound","relativeUri":"/StopPoint/aosidnf/Arrivals","message":"The following stop point is not recognised: aosidnf"}
+[2017-12-12T10:38:11.003] [FATAL] index.js - Problem when requesting bus stop information. Stop Code: aosidnf
+[2017-12-12T10:38:43.780] [DEBUG] index.js - Programme started.
+[2017-12-12T10:38:48.515] [DEBUG] index.js - Searching by stop code.
+[2017-12-12T10:38:51.581] [DEBUG] index.js - Received stop code: fao
+[2017-12-12T10:38:52.353] [ERROR] index.js - Bad request. Status code: 404
+[2017-12-12T10:38:52.356] [ERROR] index.js - Body: {"$type":"Tfl.Api.Presentation.Entities.ApiError, Tfl.Api.Presentation.Entities","timestampUtc":"2017-12-12T10:38:28.9187053Z","exceptionType":"EntityNotFoundException","httpStatusCode":404,"httpStatus":"NotFound","relativeUri":"/StopPoint/fao/Arrivals","message":"The following stop point is not recognised: fao"}
+[2017-12-12T10:38:52.358] [ERROR] index.js - Problem when requesting bus stop information. Stop Code: fao
+[2017-12-12T10:38:52.361] [ERROR] index.js - Showing?
+[2017-12-12T10:41:10.604] [DEBUG] index.js - Programme started.
+[2017-12-12T10:41:12.345] [DEBUG] index.js - Searching by stop code.
+[2017-12-12T10:41:13.139] [DEBUG] index.js - Received stop code: aoin
+[2017-12-12T10:41:13.231] [ERROR] index.js - Bad request. Status code: 404
+[2017-12-12T10:41:13.233] [ERROR] index.js - Body: {"$type":"Tfl.Api.Presentation.Entities.ApiError, Tfl.Api.Presentation.Entities","timestampUtc":"2017-12-12T10:40:49.7215221Z","exceptionType":"EntityNotFoundException","httpStatusCode":404,"httpStatus":"NotFound","relativeUri":"/StopPoint/aoin/Arrivals","message":"The following stop point is not recognised: aoin"}
+[2017-12-12T10:41:13.234] [ERROR] index.js - Problem when requesting bus stop information. Stop Code: aoin
+[2017-12-12T10:41:13.236] [ERROR] index.js - Showing?
+[2017-12-12T10:42:12.203] [DEBUG] index.js - Programme started.
+[2017-12-12T10:42:13.697] [DEBUG] index.js - Searching by stop code.
+[2017-12-12T10:42:14.585] [DEBUG] index.js - Received stop code: foain
+[2017-12-12T10:42:15.612] [ERROR] index.js - Bad request. Status code: 404
+[2017-12-12T10:42:15.615] [ERROR] index.js - Body: {"$type":"Tfl.Api.Presentation.Entities.ApiError, Tfl.Api.Presentation.Entities","timestampUtc":"2017-12-12T10:41:51.9162866Z","exceptionType":"EntityNotFoundException","httpStatusCode":404,"httpStatus":"NotFound","relativeUri":"/StopPoint/foain/Arrivals","message":"The following stop point is not recognised: foain"}
+[2017-12-12T10:42:15.618] [ERROR] index.js - Problem when requesting bus stop information. Stop Code: foain
+[2017-12-12T10:42:15.622] [ERROR] index.js - Showing?
+[2017-12-12T10:44:16.447] [DEBUG] index.js - Programme started.
+[2017-12-12T10:44:16.454] [DEBUG] index.js - Searching by stop code.
+[2017-12-12T10:44:16.456] [DEBUG] index.js - Received stop code: aofin
+[2017-12-12T10:44:38.053] [ERROR] index.js - Bad request. Status code: 404
+[2017-12-12T10:44:38.055] [ERROR] index.js - Body: {"$type":"Tfl.Api.Presentation.Entities.ApiError, Tfl.Api.Presentation.Entities","timestampUtc":"2017-12-12T10:43:53.690561Z","exceptionType":"EntityNotFoundException","httpStatusCode":404,"httpStatus":"NotFound","relativeUri":"/StopPoint/aofin/Arrivals","message":"The following stop point is not recognised: aofin"}
+[2017-12-12T10:44:45.812] [ERROR] index.js - Problem when requesting bus stop information. Stop Code: aofin

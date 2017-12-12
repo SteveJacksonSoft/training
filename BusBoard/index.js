@@ -15,13 +15,37 @@ const pc2pos = require('./pc2pos');
 const pos2stops = require('./pos2stops');
 const s2bus = require('./stop2buses');
 const print = require('./printBuses');
+const nr = require('./newRequest');
+
+function explainErrorPC(statusCode) {
+    switch (statusCode) {
+        case 400||404:
+            console.log('You have entered an invalid postcode.');
+            console.log('The postcode must be in London.');
+            break;
+        case 500:
+            console.log('A server error has occurred.');
+            break;
+    }
+}
+
+function explainErrorSC(statusCode) {
+    switch (statusCode) {
+        case 400||404:
+            console.log('You have entered an invalid stop code.');
+            break;
+        case 500:
+            console.log('A server error has occurred.');
+            break;
+    }
+}
 
 function searchByStopCode() {
     logger.debug('Searching by stop code.');
 
     console.log('Please enter a bus stop code or enter q to quit.');
-    const stopCode = readline.prompt();
-
+    // const stopCode = readline.prompt();
+    const stopCode = 'aofin';
     if (stopCode.toLowerCase() === 'q') {
         logger.debug('Programme terminating.');
         return
@@ -29,12 +53,16 @@ function searchByStopCode() {
     logger.debug('Received stop code: ' + stopCode);
 
     let stop = new classes.Stop('',stopCode,[]);
-
+        // Get list of buses
     const busReq = s2bus.getBuses(stop);
+        // Print buses
     busReq.then(stop => print.printBuses([stop]))
+        // Explain error
         .catch(err => {
-            console.log(err);
-            console.log('Programme closing.');
+            console.log(err.message);
+            logger.error('Showing?');
+            explainErrorSC(err.statusCode);
+            restartCommand();
         })
 }
 
@@ -73,8 +101,10 @@ function searchByPostcode() {
         })
         // Handle rejected promise
         .catch(err => {
-            console.log(err);
-            console.log('Programme closing.')
+            console.log(err.message);
+            explainErrorPC(err.statusCode);
+            logger.error('Restarting programme.');
+            restartCommand();
         });
 }
 
@@ -90,8 +120,8 @@ function restartCommand() {
 function command(){
     console.log('Would you like to search by postcode or stop code?' +
         ' Enter "q" to quit.');
-    let preference = readline.prompt().toLowerCase();
-    // let preference = 'postcode';
+    // let preference = readline.prompt().toLowerCase();
+    let preference = 'stop code';
 
     while (preference !== 'q') {
         // Ambiguous input?

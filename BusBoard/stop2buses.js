@@ -33,11 +33,9 @@ function getBuses(stop) {
 
             return stop
         })
-        .catch((explanation) => {
-            logger.fatal('Problem when requesting bus stop information. Stop Code: '
-                + stop.code + '\nProgramme closing.');
-            console.log(explanation);
-            console.log('The programme will close.');
+        .catch(() => {
+            logger.error('Problem when requesting bus stop information. Stop Code: '
+                + stop.code);
         });
 }
 

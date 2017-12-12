@@ -6,7 +6,7 @@ const classes = require('./classes');
 function getStops(pos) {
     const numStops = 2;
     const searchRadius = 2000;
-    const stopProm = nr.newReq('https://api.tfl.gov.uk/StopPoint?stopTypes=NaptanPublicBusCoachTram'
+    return nr.newReq('https://api.tfl.gov.uk/StopPoint?stopTypes=NaptanPublicBusCoachTram'
             + '%2CNaptanBusCoachStation&radius=' + searchRadius + '&useStopPointHierarchy'
             + '=true&modes=bus&returnLines=true&lat=' + pos.lat
             + '&lon=' + pos.lon+ '&app_id=25b29ea5&'
@@ -29,11 +29,9 @@ function getStops(pos) {
             return usedStops
         })
 
-        .catch(explanation => {
+        .catch(() => {
             logger.fatal('Error in request postcode -> position.');
-            console.log(explanation);
         });
-    return stopProm
 }
 
 exports.getStops = getStops;
