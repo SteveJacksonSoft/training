@@ -13,11 +13,6 @@ function getLatLon(postcode) {
             const lon = parsedData.result.longitude;
             return {lat: lat, lon: lon}
         })
-
-        .catch(() =>{
-            logger.fatal('Problem when requesting postcode information. Postcode: '
-                + postcode /* + '\nProgramme closing.'*/);
-        });
 }
 
 exports.getLatLon = getLatLon;

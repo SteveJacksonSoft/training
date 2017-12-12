@@ -1,37 +1,90 @@
-[2017-12-12T10:34:11.159] [DEBUG] index.js - Searching by stop code.
-[2017-12-12T10:34:18.861] [DEBUG] index.js - Received stop code: asdofin
-[2017-12-12T10:34:18.918] [ERROR] index.js - Bad request. Status code: 404
-[2017-12-12T10:34:18.921] [ERROR] index.js - Body: {"$type":"Tfl.Api.Presentation.Entities.ApiError, Tfl.Api.Presentation.Entities","timestampUtc":"2017-12-12T10:33:55.4072094Z","exceptionType":"EntityNotFoundException","httpStatusCode":404,"httpStatus":"NotFound","relativeUri":"/StopPoint/asdofin/Arrivals","message":"The following stop point is not recognised: asdofin"}
-[2017-12-12T10:34:18.924] [FATAL] index.js - Problem when requesting bus stop information. Stop Code: asdofin
-[2017-12-12T10:38:07.968] [DEBUG] index.js - Searching by stop code.
-[2017-12-12T10:38:10.883] [DEBUG] index.js - Received stop code: aosidnf
-[2017-12-12T10:38:10.997] [ERROR] index.js - Bad request. Status code: 404
-[2017-12-12T10:38:11.000] [ERROR] index.js - Body: {"$type":"Tfl.Api.Presentation.Entities.ApiError, Tfl.Api.Presentation.Entities","timestampUtc":"2017-12-12T10:37:47.4750424Z","exceptionType":"EntityNotFoundException","httpStatusCode":404,"httpStatus":"NotFound","relativeUri":"/StopPoint/aosidnf/Arrivals","message":"The following stop point is not recognised: aosidnf"}
-[2017-12-12T10:38:11.003] [FATAL] index.js - Problem when requesting bus stop information. Stop Code: aosidnf
-[2017-12-12T10:38:43.780] [DEBUG] index.js - Programme started.
-[2017-12-12T10:38:48.515] [DEBUG] index.js - Searching by stop code.
-[2017-12-12T10:38:51.581] [DEBUG] index.js - Received stop code: fao
-[2017-12-12T10:38:52.353] [ERROR] index.js - Bad request. Status code: 404
-[2017-12-12T10:38:52.356] [ERROR] index.js - Body: {"$type":"Tfl.Api.Presentation.Entities.ApiError, Tfl.Api.Presentation.Entities","timestampUtc":"2017-12-12T10:38:28.9187053Z","exceptionType":"EntityNotFoundException","httpStatusCode":404,"httpStatus":"NotFound","relativeUri":"/StopPoint/fao/Arrivals","message":"The following stop point is not recognised: fao"}
-[2017-12-12T10:38:52.358] [ERROR] index.js - Problem when requesting bus stop information. Stop Code: fao
-[2017-12-12T10:38:52.361] [ERROR] index.js - Showing?
-[2017-12-12T10:41:10.604] [DEBUG] index.js - Programme started.
-[2017-12-12T10:41:12.345] [DEBUG] index.js - Searching by stop code.
-[2017-12-12T10:41:13.139] [DEBUG] index.js - Received stop code: aoin
-[2017-12-12T10:41:13.231] [ERROR] index.js - Bad request. Status code: 404
-[2017-12-12T10:41:13.233] [ERROR] index.js - Body: {"$type":"Tfl.Api.Presentation.Entities.ApiError, Tfl.Api.Presentation.Entities","timestampUtc":"2017-12-12T10:40:49.7215221Z","exceptionType":"EntityNotFoundException","httpStatusCode":404,"httpStatus":"NotFound","relativeUri":"/StopPoint/aoin/Arrivals","message":"The following stop point is not recognised: aoin"}
-[2017-12-12T10:41:13.234] [ERROR] index.js - Problem when requesting bus stop information. Stop Code: aoin
-[2017-12-12T10:41:13.236] [ERROR] index.js - Showing?
-[2017-12-12T10:42:12.203] [DEBUG] index.js - Programme started.
-[2017-12-12T10:42:13.697] [DEBUG] index.js - Searching by stop code.
-[2017-12-12T10:42:14.585] [DEBUG] index.js - Received stop code: foain
-[2017-12-12T10:42:15.612] [ERROR] index.js - Bad request. Status code: 404
-[2017-12-12T10:42:15.615] [ERROR] index.js - Body: {"$type":"Tfl.Api.Presentation.Entities.ApiError, Tfl.Api.Presentation.Entities","timestampUtc":"2017-12-12T10:41:51.9162866Z","exceptionType":"EntityNotFoundException","httpStatusCode":404,"httpStatus":"NotFound","relativeUri":"/StopPoint/foain/Arrivals","message":"The following stop point is not recognised: foain"}
-[2017-12-12T10:42:15.618] [ERROR] index.js - Problem when requesting bus stop information. Stop Code: foain
-[2017-12-12T10:42:15.622] [ERROR] index.js - Showing?
-[2017-12-12T10:44:16.447] [DEBUG] index.js - Programme started.
-[2017-12-12T10:44:16.454] [DEBUG] index.js - Searching by stop code.
-[2017-12-12T10:44:16.456] [DEBUG] index.js - Received stop code: aofin
-[2017-12-12T10:44:38.053] [ERROR] index.js - Bad request. Status code: 404
-[2017-12-12T10:44:38.055] [ERROR] index.js - Body: {"$type":"Tfl.Api.Presentation.Entities.ApiError, Tfl.Api.Presentation.Entities","timestampUtc":"2017-12-12T10:43:53.690561Z","exceptionType":"EntityNotFoundException","httpStatusCode":404,"httpStatus":"NotFound","relativeUri":"/StopPoint/aofin/Arrivals","message":"The following stop point is not recognised: aofin"}
-[2017-12-12T10:44:45.812] [ERROR] index.js - Problem when requesting bus stop information. Stop Code: aofin
+[2017-12-12T15:30:02.888] [DEBUG] index.js - Programme started.
+[2017-12-12T15:30:22.313] [ERROR] index.js - Bad request. Status code: 404
+[2017-12-12T15:30:22.316] [ERROR] index.js - Body: {"status":404,"error":"Invalid postcode"}
+[2017-12-12T15:49:43.505] [DEBUG] index.js - Received data.
+[2017-12-12T15:49:43.509] [DEBUG] index.js - Received position of postcode.
+[2017-12-12T15:49:43.512] [DEBUG] index.js - Received stop list from position.
+[2017-12-12T15:49:56.419] [DEBUG] index.js - Received data.
+[2017-12-12T15:51:06.990] [ERROR] index.js - Bad request. Status code: 404
+[2017-12-12T15:51:06.991] [ERROR] index.js - Body: {"status":404,"error":"Invalid postcode"}
+[2017-12-12T15:51:11.005] [DEBUG] index.js - Received data.
+[2017-12-12T15:51:11.007] [DEBUG] index.js - Received position of postcode.
+[2017-12-12T15:51:11.008] [DEBUG] index.js - Received stop list from position.
+[2017-12-12T15:51:11.110] [DEBUG] index.js - Received data.
+[2017-12-12T15:51:34.198] [DEBUG] index.js - Received data.
+[2017-12-12T15:51:34.204] [DEBUG] index.js - Received position of postcode.
+[2017-12-12T15:51:34.206] [DEBUG] index.js - Received stop list from position.
+[2017-12-12T15:51:34.774] [DEBUG] index.js - Received data.
+[2017-12-12T15:51:34.776] [DEBUG] index.js - Received position of postcode.
+[2017-12-12T15:51:34.778] [DEBUG] index.js - Received stop list from position.
+[2017-12-12T15:51:39.956] [DEBUG] index.js - Received data.
+[2017-12-12T15:51:41.314] [DEBUG] index.js - Received data.
+[2017-12-12T15:53:10.133] [DEBUG] index.js - Received data.
+[2017-12-12T15:53:10.136] [DEBUG] index.js - Received position of postcode.
+[2017-12-12T15:53:10.138] [DEBUG] index.js - Received stop list from position.
+[2017-12-12T15:53:10.253] [DEBUG] index.js - Received data.
+[2017-12-12T15:55:10.086] [DEBUG] index.js - Received data.
+[2017-12-12T15:55:10.088] [DEBUG] index.js - Received position of postcode.
+[2017-12-12T15:55:10.090] [DEBUG] index.js - Received stop list from position.
+[2017-12-12T15:55:10.238] [DEBUG] index.js - Received data.
+[2017-12-12T15:57:10.099] [DEBUG] index.js - Received data.
+[2017-12-12T15:57:10.101] [DEBUG] index.js - Received position of postcode.
+[2017-12-12T15:57:10.104] [DEBUG] index.js - Received stop list from position.
+[2017-12-12T15:57:10.237] [DEBUG] index.js - Received data.
+[2017-12-12T15:57:56.821] [ERROR] index.js - Bad request. Status code: 404
+[2017-12-12T15:57:56.823] [ERROR] index.js - Body: {"status":404,"error":"Invalid postcode"}
+[2017-12-12T15:58:07.859] [ERROR] index.js - Bad request. Status code: 404
+[2017-12-12T15:58:07.860] [ERROR] index.js - Body: {"status":404,"error":"Invalid postcode"}
+[2017-12-12T15:58:12.944] [DEBUG] index.js - Received data.
+[2017-12-12T15:58:12.945] [DEBUG] index.js - Received position of postcode.
+[2017-12-12T15:58:12.946] [DEBUG] index.js - Received stop list from position.
+[2017-12-12T15:58:13.417] [DEBUG] index.js - Received data.
+[2017-12-12T15:58:22.696] [DEBUG] index.js - Programme started.
+[2017-12-12T15:58:25.114] [DEBUG] index.js - Searching by postcode.
+[2017-12-12T15:58:29.040] [DEBUG] index.js - Received postcode: se22 8hd
+[2017-12-12T15:58:29.108] [DEBUG] index.js - Received data.
+[2017-12-12T15:58:29.110] [DEBUG] index.js - Received position of postcode.
+[2017-12-12T15:58:29.112] [DEBUG] index.js - Received stop list from position.
+[2017-12-12T15:58:29.114] [ERROR] index.js - Restarting programme.
+[2017-12-12T15:58:42.993] [DEBUG] index.js - Searching by postcode.
+[2017-12-12T15:58:49.848] [DEBUG] index.js - Received postcode: nw11tl
+[2017-12-12T15:58:49.881] [DEBUG] index.js - Received data.
+[2017-12-12T15:58:49.882] [DEBUG] index.js - Received position of postcode.
+[2017-12-12T15:58:49.883] [DEBUG] index.js - Received stop list from position.
+[2017-12-12T15:58:49.885] [ERROR] index.js - Restarting programme.
+[2017-12-12T15:58:55.617] [DEBUG] index.js - Searching by postcode.
+[2017-12-12T15:58:57.189] [DEBUG] index.js - Received postcode: i
+[2017-12-12T15:58:57.208] [ERROR] index.js - Bad request. Status code: 404
+[2017-12-12T15:58:57.209] [ERROR] index.js - Body: {"status":404,"error":"Invalid postcode"}
+[2017-12-12T15:58:57.211] [ERROR] index.js - Restarting programme.
+[2017-12-12T16:06:19.632] [DEBUG] index.js - Received data.
+[2017-12-12T16:06:35.030] [ERROR] index.js - Bad request. Status code: 404
+[2017-12-12T16:06:35.032] [ERROR] index.js - Body: {"status":404,"error":"Invalid postcode"}
+[2017-12-12T16:06:39.817] [ERROR] index.js - Bad request. Status code: 404
+[2017-12-12T16:06:39.824] [ERROR] index.js - Body: {"status":404,"error":"Invalid postcode"}
+[2017-12-12T16:06:44.121] [DEBUG] index.js - Received data.
+[2017-12-12T16:06:44.123] [DEBUG] index.js - Received position of postcode.
+[2017-12-12T16:06:44.257] [DEBUG] index.js - Received data.
+[2017-12-12T16:06:44.268] [DEBUG] index.js - Received stop list from position.
+[2017-12-12T16:06:44.469] [DEBUG] index.js - Received data.
+[2017-12-12T16:06:44.824] [DEBUG] index.js - Received data.
+[2017-12-12T16:47:11.643] [DEBUG] index.js - Received data.
+[2017-12-12T16:47:11.647] [DEBUG] index.js - Received position of postcode.
+[2017-12-12T16:47:11.758] [DEBUG] index.js - Received data.
+[2017-12-12T16:47:11.771] [DEBUG] index.js - Received stop list from position.
+[2017-12-12T16:47:11.829] [DEBUG] index.js - Received data.
+[2017-12-12T16:47:12.271] [DEBUG] index.js - Received data.
+[2017-12-12T16:48:17.690] [DEBUG] index.js - Received data.
+[2017-12-12T16:48:17.692] [DEBUG] index.js - Received position of postcode.
+[2017-12-12T16:48:17.890] [DEBUG] index.js - Received data.
+[2017-12-12T16:48:17.909] [DEBUG] index.js - Received stop list from position.
+[2017-12-12T16:48:18.413] [DEBUG] index.js - Received data.
+[2017-12-12T16:48:19.417] [DEBUG] index.js - Received data.
+[2017-12-12T16:51:15.951] [ERROR] index.js - Bad request. Status code: 404
+[2017-12-12T16:51:15.954] [ERROR] index.js - Body: {"status":404,"error":"Invalid postcode"}
+[2017-12-12T17:40:49.314] [DEBUG] index.js - Received data.
+[2017-12-12T17:40:49.315] [DEBUG] index.js - Received position of postcode.
+[2017-12-12T17:40:49.682] [DEBUG] index.js - Received data.
+[2017-12-12T17:40:49.723] [DEBUG] index.js - Received stop list from position.
+[2017-12-12T17:40:49.930] [DEBUG] index.js - Received data.
+[2017-12-12T17:40:49.948] [DEBUG] index.js - Received data.

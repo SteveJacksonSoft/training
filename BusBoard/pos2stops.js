@@ -29,9 +29,6 @@ function getStops(pos) {
             return usedStops
         })
 
-        .catch(() => {
-            logger.fatal('Error in request postcode -> position.');
-        });
 }
 
 exports.getStops = getStops;

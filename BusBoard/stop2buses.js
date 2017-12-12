@@ -33,10 +33,6 @@ function getBuses(stop) {
 
             return stop
         })
-        .catch(() => {
-            logger.error('Problem when requesting bus stop information. Stop Code: '
-                + stop.code);
-        });
 }
 
 
